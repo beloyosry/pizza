@@ -10972,6 +10972,27 @@ body {
   border: 1px solid #fefefe !important;
 }
 
+.container > .text-center {
+  color: #fefefe !important;
+  margin-bottom: 30px;
+}
+
+.order-price {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+.order-price .custom-btn {
+  padding: 10px 20px;
+}
+.order-price span {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  color: #eb173d;
+}
+
 .container-fluid {
   padding-right: 0 !important;
   padding-left: 0 !important;
@@ -11071,4 +11092,35 @@ body {
 .hero .carousel .carousel-caption h4 {
   width: 60%;
   color: #fefefe;
+}
+
+.offers .card-body {
+  width: 90%;
+  border: 1px solid #a9a9a9;
+  border-radius: 5px;
+  position: relative;
+  background-color: #fefefe;
+  top: -17px;
+  left: -5%;
+}
+.offers .card-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+.offers .card-text {
+  font-size: 14px;
+}
+
+.menu img {
+  height: 272px;
+  object-fit: cover;
+}
+.menu .pizza-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.menu .pizza-details .dropdown-menu {
+  padding-right: 10px;
 }
