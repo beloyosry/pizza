@@ -1,17 +1,93 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>AraPizza</title>
 <script defer src="./js/bundle.js"></script><link href="./main.css" rel="stylesheet"></head>
-<body>
-    <ul class="list-group x">
-        <li class="list-group-item">Lorem ipsum dolor sit amet.</li>
-        <li class="list-group-item">Lorem ipsum dolor sit amet.</li>
-        <li class="list-group-item">Lorem ipsum dolor sit amet.</li>
-        <li class="list-group-item">Lorem ipsum dolor sit amet.</li>
-    </ul>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" style="height: 5000px;">
+    <div class="container-fluid">
+        <section class="top-menu">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+                    <div class="container">
+                        <a class="navbar-brand" href="#" style="color: #fefefe;">ARA<span
+                                style="color: #eb173d;">PIZZA</span></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active p-2">
+                                    <a class="nav-link" href="#">الرئيسية</a>
+                                </li>
+                                <li class="nav-item p-2">
+                                    <a class="nav-link" href="#menu">المنيو</a>
+                                </li>
+                                <li class="nav-item p-2">
+                                    <a class="nav-link" href="#offers">العروض</a>
+                                </li>
+                                <li class="nav-item p-2">
+                                    <a class="nav-link" href="about.html">حول المطعم</a>
+                                </li>
+                                <li class="nav-item p-2">
+                                    <a class="nav-link" href="contactUs.html">تواصل معنا</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <section class="hero" id="hero">
+            <div class="row">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./images/carousel3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./images/carousel2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./images/carousel1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./images/carousel4.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="offers" id="offers" style="height: 5000px;"></section>
+        <section class="menu" id="menu" style="height: 5000px;"></section>
+        <footer></footer>
+    </div>
 </body>
+
 </html>
