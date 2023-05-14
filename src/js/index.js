@@ -32,6 +32,6 @@ $(function () {
 
     $(".oreder-now").on("click", function () {
         $(".nav-item").removeClass("active");
-        $(".nav-item:nth(1)").addClass("active");
+        $(".nav-item:nth(2)").addClass("active");
     });
 });
