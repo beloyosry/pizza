@@ -10960,6 +10960,18 @@ body {
   scrollbar-width: thin;
 }
 
+.custom-btn {
+  padding: 15px 40px;
+  color: #eb173d !important;
+  border: 1px solid #eb173d !important;
+  font-weight: bold !important;
+}
+.custom-btn:hover, .custom-btn:focus {
+  color: #fefefe !important;
+  background-color: #eb173d !important;
+  border: 1px solid #fefefe !important;
+}
+
 .container-fluid {
   padding-right: 0 !important;
   padding-left: 0 !important;
@@ -10970,6 +10982,9 @@ body {
   font-weight: bold;
   padding: 0 100px !important;
   background-color: transparent !important;
+}
+.top-menu .navbar img {
+  width: 50px;
 }
 .top-menu .navbar button.navbar-toggler {
   color: #fefefe;
@@ -11020,6 +11035,7 @@ body {
 }
 .hero .carousel .carousel-item .overlay {
   position: absolute;
+  background-color: rgba(169, 169, 169, 0.3);
   top: 0;
   right: 0;
   height: 100%;
@@ -11045,8 +11061,12 @@ body {
 }
 .hero .carousel .carousel-caption h1 {
   font-weight: bold;
-  color: white;
+  color: #fefefe;
   margin-bottom: 50px;
+}
+.hero .carousel .carousel-caption h1 span {
+  color: #eb173d;
+  font-size: 50px;
 }
 .hero .carousel .carousel-caption h4 {
   width: 60%;

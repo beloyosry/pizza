@@ -21,8 +21,21 @@ html::-webkit-scrollbar-thumb {
 body {
     font-family: "cairoFont", sans-serif !important;
     background-color: $dark-grey-color;
-    // scrollbar-gutter: stable;
     scrollbar-width: thin;
+}
+
+.custom-btn {
+    padding: 15px 40px;
+    color: $main-color !important;
+    border: 1px solid $main-color !important;
+    font-weight: bold !important;
+
+    &:hover,
+    &:focus {
+        color: $custom-color !important;
+        background-color: $main-color !important;
+        border: 1px solid $custom-color !important;
+    }
 }
 
 .container-fluid {
@@ -37,6 +50,9 @@ body {
         padding: 0 100px !important;
         background-color: transparent !important;
 
+        img{
+            width: 50px;
+        }
         button.navbar-toggler {
             color: $custom-color;
         }
@@ -101,7 +117,7 @@ body {
 
             .overlay {
                 position: absolute;
-                // background-color: rgba(100, 230, 234, 0.5);
+                background-color: rgba($color: $card-text-color, $alpha: 0.3);
                 top: 0;
                 right: 0;
                 height: 100%;
@@ -134,8 +150,13 @@ body {
         .carousel-caption {
             h1 {
                 font-weight: bold;
-                color: white;
+                color: $custom-color;
                 margin-bottom: 50px;
+
+                span {
+                    color: $main-color;
+                    font-size: 50px;
+                }
             }
 
             h4 {

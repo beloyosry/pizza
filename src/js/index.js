@@ -29,4 +29,9 @@ $(function () {
         $(".nav-item").removeClass("active");
         $(".nav-item:first-child").addClass("active");
     });
+
+    $(".oreder-now").on("click", function () {
+        $(".nav-item").removeClass("active");
+        $(".nav-item:nth(1)").addClass("active");
+    });
 });
