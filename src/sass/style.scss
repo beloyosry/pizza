@@ -50,7 +50,7 @@ body {
         padding: 0 100px !important;
         background-color: transparent !important;
 
-        img{
+        img {
             width: 50px;
         }
         button.navbar-toggler {
@@ -164,5 +164,29 @@ body {
                 color: $custom-color;
             }
         }
+    }
+}
+
+.offers {
+    .container > .text-center {
+        color: $custom-color !important;
+    }
+
+    .card-body {
+        width: 90%;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        position: relative;
+        background-color: white;
+        top: -17px;
+        left: -5%;
+    }
+    .card-title {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .card-text {
+        font-size: 14px;
     }
 }
