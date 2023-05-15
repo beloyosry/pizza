@@ -10960,6 +10960,16 @@ body {
   scrollbar-width: thin;
 }
 
+ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+a {
+  text-decoration: none;
+}
+
 .custom-btn {
   padding: 15px 40px;
   color: #eb173d !important;
@@ -11053,6 +11063,7 @@ body {
 }
 .hero .carousel .carousel-item img {
   height: 100vh;
+  object-fit: cover;
 }
 .hero .carousel .carousel-item .overlay {
   position: absolute;
@@ -11123,4 +11134,123 @@ body {
 }
 .menu .pizza-details .dropdown-menu {
   padding-right: 10px;
+}
+
+footer {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(169, 169, 169, 0.3);
+  padding-top: 50px;
+  color: #fefefe;
+}
+footer .footer-bg {
+  position: absolute;
+  object-fit: cover;
+  right: -120px;
+  bottom: -349px;
+  z-index: -1;
+  width: 700px;
+  opacity: 0.2;
+}
+footer .site-info .identity {
+  gap: 20px;
+}
+footer .site-info .identity .social-links ul li svg {
+  color: #fefefe;
+  font-size: 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+footer .site-info .identity .social-links ul li svg:hover {
+  color: #eb173d;
+  transform: scale(1.2);
+}
+footer .site-info .identity p {
+  text-transform: capitalize;
+  font-size: 15px;
+}
+footer .site-info .identity p span {
+  color: #eb173d;
+}
+footer .site-info .important-links {
+  padding-top: 20px;
+}
+footer .site-info .important-links p {
+  color: #eb173d;
+  margin-bottom: 30px;
+}
+footer .site-info .important-links ul li {
+  margin: 10px 0;
+}
+footer .site-info .important-links ul li a {
+  color: #fefefe;
+  font-size: 12px;
+}
+footer .site-info .important-links ul li a:hover {
+  color: rgb(63, 63, 172);
+  text-decoration: underline;
+}
+footer .site-info .working-info {
+  padding-top: 20px;
+}
+footer .site-info .working-info h3 {
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+footer .site-info .working-info ul li {
+  margin: 15px 0;
+  font-size: 12px;
+}
+footer .site-info .working-info ul li:nth-of-type(odd) {
+  color: #eb173d;
+}
+footer .site-info .working-info ul li:nth-of-type(even) {
+  direction: ltr;
+  color: #fefefe;
+}
+footer .site-info .join-us {
+  padding-top: 20px;
+}
+footer .site-info .join-us h3 {
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+footer .site-info .join-us .input-group {
+  direction: ltr !important;
+}
+footer .site-info .join-us .input-group input {
+  border-radius: 0;
+}
+footer .site-info .join-us .input-group input::placeholder {
+  text-align: right;
+}
+footer .site-info .join-us .input-group button {
+  border-radius: 0;
+}
+footer .site-info .join-us .input-group button svg {
+  color: #fefefe;
+  transition: all 0.3s ease;
+}
+footer .site-info .join-us .input-group button:hover {
+  background-color: transparent !important;
+}
+footer .site-info .join-us .input-group button:hover svg {
+  color: #eb173d;
+}
+footer .site-info .join-us .copyright {
+  direction: ltr;
+}
+footer .site-info .join-us .copyright span:last-of-type {
+  color: #eb173d;
+}
+footer .links {
+  font-size: 16px;
+}
+footer .links ul li {
+  transition: all 0.3s ease;
+  margin: -5px 0 !important;
+}
+footer .links ul li:hover a {
+  color: #eb173d;
 }
