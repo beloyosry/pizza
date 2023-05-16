@@ -10,7 +10,7 @@
 
 <body>
     <div class="container-fluid">
-        <section class="top-menu">
+        <section class="top-menu mb-5">
             <div class="row">
                 <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
                     <div class="container">
@@ -44,6 +44,291 @@
                         </div>
                     </div>
                 </nav>
+            </div>
+        </section>
+        <section class="pizza-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 borders-between">
+                        <div class="row">
+                            <div class="col-lg-5 offset-lg-1 col-md-9 offset-md-2">
+                                <div class="carousel slide" id="carousel-product-images">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="images/first-pizza_1.jpg" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/first-pizza_2.jpg" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/first-pizza_3.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="carousel-indicators custom-carousel-indicators-primary">
+                                        <img data-bs-target="#carousel-product-images" data-bs-slide-to="0"
+                                            class="active" src="images/first-pizza_1.jpg" alt="">
+                                        <img data-bs-target="#carousel-product-images" data-bs-slide-to="1"
+                                            src="images/first-pizza_2.jpg" alt="">
+                                        <img data-bs-target="#carousel-product-images" data-bs-slide-to="2"
+                                            src="images/first-pizza_3.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <form id="form-product-selection" class="borders-between">
+                                    <div class="row">
+                                        <div class="clearfix block-100">
+                                            <h2 class="float-right">بيتزا مارجريت</h2>
+                                            <div class="float-left price large" data-product-price>15$</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <p class="product-description">
+                                            بيتزا مارجريت: هي الشكل الأساسي المعروف لطبق البيتزا، أي تلك التي تحتوي على
+                                            صلصة بندورة بسيطة منكَّهة بالأعشاب ومغطّاة بالجبنة، وقد سُمّيت بهذا الاسم
+                                            نسبةً إلى الملكة مارجريتا؛ حيث ابتكر الطاهي روفائيل اسبوزيتو هذا الطبق
+                                            بمناسبة قدوم الملكة مارجريتا إلى مدينة نابولي.
+                                        </p>
+                                    </div>
+                                    <div class="row size-and-type">
+                                        <div class="col-md-6">
+                                            الحجم:
+                                            <br />
+                                            <div class="product-option">
+                                                <label>
+                                                    S
+                                                    <input type="radio" name="size" value="sm">
+                                                </label>
+                                            </div>
+                                            <div class="product-option active">
+                                                <label>
+                                                    M
+                                                    <input type="radio" name="size" value="m" checked>
+                                                </label>
+                                            </div>
+                                            <div class="product-option">
+                                                <label>
+                                                    L
+                                                    <input type="radio" name="size" value="l">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!--اختيار اللون-->
+                                        <div class="col-md-6">
+                                            نوع العجينة:
+                                            <br />
+                                            <div class="product-option type active">
+                                                <label>
+                                                    نحيفة
+                                                    <input type="radio" name="size" value="thin" checked>
+                                                </label>
+                                            </div>
+                                            <div class="product-option type">
+                                                <label>
+                                                    سميكة
+                                                    <input type="radio" name="size" value="classic">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row product-quantity clearfix">
+                                        <div class="col-12 d-flex align-items-center justify-content-between">
+                                            <div class="clearfix">
+                                                <div class="float-right label">
+                                                    العدد المطلوب:
+                                                </div>
+                                                <div class="float-right">
+                                                    <select id="quantity" class="form-control custom-form-control"
+                                                        name="quantity">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="total">
+                                                <p style="display: inline;">الإجمالي:</p>
+                                                <br>
+                                                <span id="total-price"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button type="submit" class="btn custom-btn custom-btn-with-icon">
+                                                <span>
+                                                    إضافة لعربة الشراء
+                                                    <i class="fas fa-cart-plus fa-lg"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="comments block-100">
+                                <h3 class="custom-heading heading-inline heading-with-border-bottom">
+                                    التعليقات على المُنتج
+                                </h3>
+                                <div class="borders-between">
+                                    <div class="row">
+                                        <div class="media">
+                                            <img src="images/reviewer_1.jpg" alt="محمد هاني">
+                                            <div class="media-body">
+                                                <h4 class="media-heading">
+                                                    محمد هاني
+                                                </h4>
+                                                <div class="rating">
+                                                    <span class="fas fa-star active"></span>
+                                                    <span class="fas fa-star active"></span>
+                                                    <span class="fas fa-star active"></span>
+                                                    <span class="fas fa-star active"></span>
+                                                    <span class="fas fa-star"></span>
+                                                </div>
+                                                <p>
+                                                    منتج جيد جدا أنصح بشرائه مصنوع من أقمشة عالية الجودة
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="media">
+                                            <img src="images/reviewer_2.jpg" alt="منى محمود">
+                                            <div class="media-body">
+                                                <h4 class="media-heading">
+                                                    منى محمود
+                                                </h4>
+                                                <div class="rating">
+                                                    <span class="fas fa-star active"></span>
+                                                    <span class="fas fa-star active"></span>
+                                                    <span class="fas fa-star active"></span>
+                                                    <span class="fas fa-star active"></span>
+                                                    <span class="fas fa-star"></span>
+                                                </div>
+                                                <p>
+                                                    السعر مرتفع قليلًا
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row suggestions">
+                            <h3 class="custom-heading col-sm-12">اقترحنا لك</h3>
+                            <div class="col-lg-3 col-md-4">
+                                <div class="card custom-thumbnail">
+                                    <div class="overlay">
+                                        <button class="btn btn-secondary add-to-cart-btn">
+                                            إضافة للعربة
+                                            <i class="fas fa-cart-plus"></i>
+                                        </button>
+                                    </div>
+                                    <img src="images/pizza-3.jpg" alt="">
+                                    <div class="card-body">
+                                        <div class="clearfix">
+                                            <h4 class="float-right">بيتزا دجاج</h4>
+                                            <div class="price float-left">
+                                                30$
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                            <button
+                                                class="float-left btn btn-default add-to-cart-btn d-block d-lg-none">
+                                                إضافة للعربة
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4">
+                                <div class="card custom-thumbnail">
+                                    <div class="overlay">
+                                        <button class="btn btn-secondary add-to-cart-btn">
+                                            إضافة للعربة
+                                            <i class="fas fa-cart-plus"></i>
+                                        </button>
+                                    </div>
+                                    <img src="images/pizza-5.jpg" alt="">
+                                    <div class="card-body">
+                                        <div class="clearfix">
+                                            <h4 class="float-right">بيتزا سي فود</h4>
+                                            <div class="price float-left">
+                                                50$
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                            <button
+                                                class="float-left btn btn-default add-to-cart-btn d-block d-lg-none">
+                                                إضافة للعربة
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4">
+                                <div class="card custom-thumbnail">
+                                    <div class="sale">50%</div>
+                                    <div class="overlay">
+                                        <button class="btn btn-secondary add-to-cart-btn">
+                                            إضافة للعربة
+                                            <i class="fas fa-cart-plus"></i>
+                                        </button>
+                                    </div>
+                                    <img src="images/pizza-2.jpg" alt="">
+                                    <div class="card-body">
+                                        <div class="clearfix">
+                                            <h4 class="float-right">بيتزا لحوم</h4>
+                                            <div class="price float-left">
+                                                40$
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                            <button
+                                                class="float-left btn btn-default add-to-cart-btn d-block d-lg-none">
+                                                إضافة للعربة
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 d-none d-lg-block">
+                                <div class="card custom-thumbnail">
+                                    <div class="overlay">
+                                        <button class="btn btn-secondary add-to-cart-btn">
+                                            إضافة للعربة
+                                            <i class="fas fa-cart-plus"></i>
+                                        </button>
+                                    </div>
+                                    <img src="images/pizza-7.jpg" alt="">
+                                    <div class="card-body">
+                                        <div class="clearfix">
+                                            <h4 class="float-right">بيتزا خضار</h4>
+                                            <div class="price float-left">
+                                                25$
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                            <button
+                                                class="float-left btn btn-default add-to-cart-btn d-block d-lg-none">
+                                                إضافة للعربة
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <footer>

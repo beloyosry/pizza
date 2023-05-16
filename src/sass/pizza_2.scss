@@ -1,0 +1,212 @@
+// @import "./variable-pizza_2";
+@import "./variable";
+
+img {
+    object-fit: cover;
+}
+
+.pizza-2 {
+    color: $custom-color;
+    margin-top: 100px;
+
+    .carousel {
+        margin-top: 30px;
+
+        &-item {
+            height: 423px;
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+    .carousel-indicators [data-bs-target] {
+        width: 50px;
+        height: 50px;
+        border: 2px solid transparent;
+    }
+    .custom-carousel-indicators-primary img.active {
+        border-color: $main-color;
+    }
+
+    #carousel-product-images .carousel-indicators {
+        position: relative;
+        top: -35px;
+        right: 0;
+    }
+
+    #carousel-product-images .carousel-item img {
+        border: 1px solid $custom-color;
+        width: 100%;
+    }
+
+    .product-description {
+        text-align: justify;
+    }
+
+    .block-100 {
+        width: 100%;
+        display: block;
+    }
+
+    .product-category {
+        color: #a9a9a9;
+    }
+
+    #form-product-selection h2 {
+        font-size: 30px;
+        font-weight: 700;
+        margin: 18px 0 18px;
+    }
+
+    .price.large {
+        font-size: 30px;
+        margin-top: 20px;
+    }
+
+    .borders-between > div + div {
+        border-top: 1px solid #ebebeb;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .product-option {
+        display: inline-block;
+        height: 23px;
+        width: 23px;
+        border: 1px solid #ebebeb;
+        text-align: center;
+        justify-content: center;
+        color: #c2c2c2;
+        margin: 3px 3px 9px 3px;
+        transition: all 0.3s ease;
+
+        &.type {
+            width: fit-content;
+            padding: 0 10px;
+        }
+
+        &:hover {
+            color: $main-color;
+            border-color: $main-color;
+        }
+    }
+
+    .product-option input {
+        display: none;
+    }
+
+    .product-option label {
+        font-weight: 700;
+        display: inline-block;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .product-option.active {
+        color: $main-color;
+        border-color: $main-color;
+    }
+
+    .product-quantity select {
+        width: 56px;
+        height: 34px !important;
+        padding: 6px 12px;
+        margin-right: 3px;
+    }
+
+    .product-quantity .label {
+        padding-top: 10px;
+    }
+
+    .product-quantity {
+        padding-bottom: 20px;
+    }
+
+    .custom-btn-with-icon {
+        color: $custom-color;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        padding: 5px 10px 5px 10px;
+    }
+
+    .comments {
+        .media {
+            margin: 15px;
+        }
+
+        .media:first-child {
+            margin-top: 0px;
+        }
+
+        .media img {
+            width: 80px;
+            height: 80px;
+            margin-left: 10px;
+            border: 1px solid #dfdfdf;
+        }
+
+        .media .media-heading {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .rating {
+            svg {
+                color: $main-color;
+            }
+        }
+    }
+
+    .suggestions {
+        color: $dark-grey-color;
+        .overlay {
+            position: absolute;
+            background-color: rgba($color: $main-color, $alpha: 0.5);
+            height: 250px;
+            width: calc(100% - 16px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .overlay:hover {
+            opacity: 1;
+        }
+        .suggestions .custom-thumbnail {
+            margin-right: -8px;
+            margin-left: -8px;
+        }
+        .custom-thumbnail {
+            border: 2px solid #eef0ea;
+            padding: 8px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .custom-thumbnail:hover {
+            border-color: $main-color;
+        }
+        .custom-thumbnail .sale {
+            padding: 5px 10px;
+            position: absolute;
+            left: 16px;
+            top: 14px;
+            direction: ltr;
+        }
+
+        .custom-thumbnail .sale::before {
+            content: "-";
+        }
+
+        .custom-thumbnail img {
+            height: 250px;
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+}

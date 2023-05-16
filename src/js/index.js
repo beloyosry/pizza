@@ -43,6 +43,27 @@ $(function () {
         $(".nav-item").removeClass("active");
         $(".nav-item:nth(2)").addClass("active");
     });
+
+    $("#form-product-selection").on("submit", function () {
+        alert("أضيف المُنتج إلى عربة الشراء");
+    });
+    $(".add-to-cart-btn").on("click", function () {
+        alert("أضيف المُنتج إلى عربة الشراء");
+    });
+
+    $('.product-option input[type="radio"]').on("change", function () {
+        $(this).parents(".product-option").siblings().removeClass("active");
+        $(this).parents(".product-option").addClass("active");
+    });
+
+    $("#total-price").text($("[data-product-price]").text());
+
+    $("#quantity").on("change", function () {
+        var quantity = $(this).val();
+        var price = $("[data-product-price]").text();
+        var total = quantity * parseInt(price);
+        $("#total-price").text(`${total}$`);
+    });
 });
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
