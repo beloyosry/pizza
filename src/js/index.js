@@ -56,13 +56,27 @@ $(function () {
         $(this).parents(".product-option").addClass("active");
     });
 
-    $("#total-price").text($("[data-product-price]").text());
+    var radio = $("input[name='size']");
+    var price = parseInt($("[data-product-price]").text());
+    $("#total-price").text(`${price}$`);
+    radio.on("change", function () {
+        var size = $(this).val();
+        var newPrice;
+        if (size == "sm") {
+            newPrice = price;
+        } else if (size == "m") {
+            newPrice = price + 20;
+        } else if (size == "l") {
+            newPrice = price + 50;
+        }
+        $("[data-product-price]").text(`${newPrice}$`);
+        $("#total-price").text(`${newPrice}$`);
 
-    $("#quantity").on("change", function () {
-        var quantity = $(this).val();
-        var price = $("[data-product-price]").text();
-        var total = quantity * parseInt(price);
-        $("#total-price").text(`${total}$`);
+        $("#quantity").on("change", function () {
+            var quantity = $(this).val();
+            var total = quantity * parseInt(newPrice);
+            $("#total-price").text(`${total}$`);
+        });
     });
 });
 
