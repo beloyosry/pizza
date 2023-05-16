@@ -1,0 +1,211 @@
+@mixin button-style($main-color, $custom-color) {
+    color: $main-color !important;
+    border-color: $main-color !important;
+
+    &:hover,
+    &:focus {
+        color: $custom-color !important;
+        background-color: $main-color !important;
+        border-color: $custom-color !important;
+    }
+}
+
+@mixin footer($main-color, $custom-color) {
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba($color: $grey-color, $alpha: 0.3);
+    padding-top: 50px;
+    color: $custom-color;
+    .footer-bg {
+        position: absolute;
+        object-fit: cover;
+        right: -120px;
+        bottom: -349px;
+        z-index: -1;
+        width: 700px;
+        opacity: 0.2;
+    }
+    .site-info {
+        .identity {
+            gap: 20px;
+            .social-links {
+                ul {
+                    li {
+                        svg {
+                            color: $custom-color;
+                            font-size: 20px;
+                            margin: 0 10px;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+
+                            &:hover {
+                                color: $main-color;
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
+                }
+            }
+            p {
+                text-transform: capitalize;
+                font-size: 15px;
+                span {
+                    color: $main-color;
+                }
+            }
+        }
+        .important-links {
+            padding-top: 20px;
+            p {
+                color: $main-color;
+                margin-bottom: 30px;
+            }
+            ul {
+                li {
+                    margin: 10px 0;
+                    a {
+                        color: $custom-color;
+                        font-size: 12px;
+
+                        &:hover {
+                            color: rgb(63, 63, 172);
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .working-info {
+            padding-top: 20px;
+            h3 {
+                font-size: 16px;
+                margin-bottom: 35px;
+            }
+            ul {
+                li {
+                    margin: 15px 0;
+                    font-size: 12px;
+                }
+                li:nth-of-type(odd) {
+                    color: $main-color;
+                }
+                li:nth-of-type(even) {
+                    direction: ltr;
+                    color: $custom-color;
+                }
+            }
+        }
+        .join-us {
+            padding-top: 20px;
+            h3 {
+                font-size: 16px;
+                margin-bottom: 35px;
+            }
+            .input-group {
+                direction: ltr !important;
+
+                input {
+                    border-radius: 0;
+                    &::placeholder {
+                        text-align: right;
+                    }
+                }
+                button {
+                    border-radius: 0;
+
+                    svg {
+                        color: $custom-color;
+                        transition: all 0.3s ease;
+                    }
+                    &:hover {
+                        background-color: transparent !important;
+                        svg {
+                            color: $main-color;
+                        }
+                    }
+                }
+            }
+            .copyright {
+                direction: ltr;
+                span:last-of-type {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+
+    .links {
+        font-size: 16px;
+        ul {
+            li {
+                transition: all 0.3s ease;
+                margin: -5px 0 !important;
+                &:hover {
+                    a {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin header($main-color, $custom-color, $dark-grey-color) {
+    .navbar {
+        font-weight: bold;
+        padding: 0 100px !important;
+        background-color: transparent !important;
+
+        img {
+            width: 50px;
+        }
+        button.navbar-toggler {
+            color: $custom-color;
+        }
+        .navbar-nav {
+            li > a {
+                transition-property: background-color;
+                transition-duration: 0.5s;
+                color: $custom-color;
+
+                &:hover {
+                    color: $main-color;
+                    background-color: $custom-color;
+                    border-bottom: 1px solid $main-color;
+                }
+            }
+
+            .active a {
+                color: $main-color !important;
+                border-bottom: 1px solid $custom-color;
+            }
+        }
+    }
+    .noTransparent {
+        background-color: $custom-color !important;
+
+        button.navbar-toggler {
+            color: $main-color !important;
+        }
+        li > a {
+            transition-property: background-color;
+            transition-duration: 0.5s;
+            color: $dark-grey-color !important;
+
+            &:hover {
+                color: $custom-color !important;
+                background-color: $main-color !important;
+                border-bottom: 1px solid $main-color;
+            }
+        }
+
+        .active a {
+            color: $main-color !important;
+            border-bottom: 1px solid $dark-grey-color !important;
+
+            &:hover {
+                color: $custom-color !important;
+            }
+        }
+    }
+}

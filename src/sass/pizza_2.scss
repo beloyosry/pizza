@@ -1,13 +1,39 @@
-// @import "./variable-pizza_2";
+@import "mixins";
 @import "./variable";
+
+$main-color: #17a4eb;
+$custom-color: #fefefe;
+$dark-grey-color: #1f1f1f;
 
 img {
     object-fit: cover;
 }
 
+.top-menu-2 {
+    @include header(
+        $main-color ,
+        $custom-color ,
+        $dark-grey-color 
+    );
+}
+
 .pizza-2 {
     color: $custom-color;
     margin-top: 100px;
+
+    .custom-btn {
+        @include button-style($main-color, $custom-color);
+        padding: 15px 40px;
+        border-width: 1px !important;
+        border-style: solid !important;
+        font-weight: bold !important;
+
+        &:hover,
+        &:focus {
+            border-width: 1px !important;
+            border-style: solid !important;
+        }
+    }
 
     .carousel {
         margin-top: 30px;
@@ -209,4 +235,8 @@ img {
             display: block;
         }
     }
+}
+
+.footer-pizza-2 {
+    @include footer($main-color, $custom-color);
 }
