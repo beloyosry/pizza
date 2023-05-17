@@ -187,5 +187,6 @@ a {
 }
 
 footer {
-    @include footer($main-color, $custom-color);
+    @include footer($main-color, $custom-color, $main-border-color);
+
 }
