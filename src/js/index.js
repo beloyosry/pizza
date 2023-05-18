@@ -34,6 +34,11 @@ $(function () {
         $(this).addClass("active");
     });
 
+    $(".location-item").on("click", function () {
+        $(".location-item").removeClass("active");
+        $(this).addClass("active");
+    });
+
     $(".navbar-brand").on("click", function () {
         $(".nav-item").removeClass("active");
         $(".nav-item:first-child").addClass("active");
@@ -55,6 +60,8 @@ $(function () {
         $(this).parents(".product-option").siblings().removeClass("active");
         $(this).parents(".product-option").addClass("active");
     });
+
+    // price calculations
 
     var radio = $("input[name='size']");
     var price = parseInt($("[data-product-price]").text());

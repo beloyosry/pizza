@@ -38,6 +38,12 @@ a {
     text-decoration: none;
 }
 
+input {
+    &::placeholder {
+        text-align: right !important;
+    }
+}
+
 .custom-btn {
     @include button-style($main-color, $custom-color);
     padding: 15px 40px;
@@ -80,7 +86,7 @@ a {
     overflow-x: hidden;
 }
 
-.top-menu{
+.top-menu {
     @include header($main-color, $custom-color, $dark-grey-color);
 }
 
@@ -188,5 +194,113 @@ a {
 
 footer {
     @include footer($main-color, $custom-color, $main-border-color);
+}
 
+// Contact-us Page
+
+.contact-us {
+    margin: 150px 0;
+    .location-header {
+        margin-bottom: 50px;
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+
+            .location {
+                &-name {
+                    color: $custom-color;
+                    font-size: 20px;
+                }
+                &-nav {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                &-item.active {
+                    .location-link {
+                        color: $main-color !important;
+                        border-bottom: 1px solid $custom-color !important;
+                    }
+                }
+                &-link {
+                    color: $custom-color;
+                    transition: all 0.3s ease;
+                    &:hover {
+                        color: $main-color;
+                        border-bottom: 1px solid $custom-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .location {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+
+        .logo {
+            p {
+                font-size: 30px;
+                color: $custom-color;
+                span {
+                    color: $main-color;
+                }
+            }
+        }
+        .address {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            color: $custom-color;
+            text-align: center;
+            &-header {
+            }
+            &-body {
+            }
+        }
+        .map {
+        }
+    }
+
+    .footer {
+        .events {
+            color: $custom-color;
+            h3 {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            &-item {
+                li {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        .form {
+            color: $custom-color;
+        }
+
+        .gallery {
+            .row {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            &-item {
+                img {
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    border: 1px solid $grey-color;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
 }
