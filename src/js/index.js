@@ -29,8 +29,8 @@ window.onscroll = function () {
 };
 
 $(function () {
-    $(".nav-item").on("click", function () {
-        $(".nav-item").removeClass("active");
+    $(".nav-link").on("click", function () {
+        $(".nav-link").removeClass("active");
         $(this).addClass("active");
     });
 
@@ -44,7 +44,7 @@ $(function () {
         $(".nav-item:first-child").addClass("active");
     });
 
-    $(".oreder-now").on("click", function () {
+    $(".order-now").on("click", function () {
         $(".nav-item").removeClass("active");
         $(".nav-item:nth(2)").addClass("active");
     });

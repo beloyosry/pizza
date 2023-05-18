@@ -86,8 +86,80 @@ input {
     overflow-x: hidden;
 }
 
-.top-menu {
-    @include header($main-color, $custom-color, $dark-grey-color);
+nav {
+    &.navbar {
+        font-weight: bold;
+        padding: 0 100px !important;
+        background-color: transparent !important;
+
+        img {
+            width: 50px;
+        }
+        button.navbar-toggler {
+            color: $custom-color;
+        }
+        .navbar-nav {
+            li > a {
+                transition-property: background-color;
+                transition-duration: 0.5s;
+                color: $custom-color;
+
+                &:hover {
+                    color: $main-color;
+                    background-color: $custom-color;
+                    border-bottom: 1px solid $main-color;
+                }
+            }
+
+            .active a {
+                color: $main-color !important;
+                border-bottom: 1px solid $custom-color;
+            }
+            .nav-link {
+                &.active {
+                    color: $main-color !important;
+                    border-bottom: 1px solid $custom-color;
+                }
+            }
+        }
+    }
+    &.noTransparent {
+        background-color: $custom-color !important;
+
+        button.navbar-toggler {
+            color: $main-color !important;
+        }
+        li > a {
+            transition-property: background-color;
+            transition-duration: 0.5s;
+            color: $dark-grey-color !important;
+
+            &:hover {
+                color: $custom-color !important;
+                background-color: $main-color !important;
+                border-bottom: 1px solid $main-color;
+            }
+        }
+
+        .active a {
+            color: $main-color !important;
+            border-bottom: 1px solid $dark-grey-color !important;
+
+            &:hover {
+                color: $custom-color !important;
+            }
+        }
+        .nav-link {
+            &.active {
+                color: $main-color !important;
+                border-bottom: 1px solid $dark-grey-color !important;
+
+                &:hover {
+                    color: $custom-color !important;
+                }
+            }
+        }
+    }
 }
 
 .hero {
@@ -155,6 +227,8 @@ input {
 }
 
 .offers {
+    padding-top: 5rem;
+
     .card-body {
         width: 90%;
         border: 1px solid $grey-color;
@@ -175,6 +249,9 @@ input {
 }
 
 .menu {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+
     img {
         height: 272px;
         object-fit: cover;
@@ -299,6 +376,156 @@ footer {
                     object-fit: cover;
                     border: 1px solid $grey-color;
                     margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+// About-us Page
+
+.about-us {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    color: $custom-color;
+    line-height: 2;
+
+    .logo {
+        img {
+            width: 300px;
+        }
+    }
+    .text {
+        h2 {
+            margin-bottom: 50px;
+        }
+        &-about {
+            p {
+                span {
+                    color: $main-color;
+                }
+            }
+            a {
+                color: $main-color;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        &-slider {
+            width: 65%;
+            margin: 0 auto 80px;
+
+            .carousel-item {
+                min-height: 350px;
+
+                .carousel-caption {
+                    width: 100%;
+                    padding: 80px 70px 35px;
+                    right: 0;
+                    img {
+                        position: absolute;
+                        top: 0;
+                        transform: translate(50%, -50%);
+                        -webkit-transform: translate(50%, -50%);
+                        -moz-transform: translate(50%, -50%);
+                        -ms-transform: translate(50%, -50%);
+                        -o-transform: translate(50%, -50%);
+                    }
+                    h4 {
+                        font-size: 18px;
+                        color: $custom-color;
+                        margin-bottom: 15px;
+                    }
+                    p {
+                        font-size: 15px;
+                        line-height: 22px;
+                        color: $grey-color;
+                        margin-bottom: 25px;
+                    }
+                }
+            }
+
+            .carousel {
+                &-indicators {
+                    bottom: -5px;
+                    button {
+                        width: 15px;
+                        height: 15px;
+                        border: 1px solid $main-color;
+                        background-color: $custom-color;
+
+                        &.active {
+                            background-color: $main-color;
+                        }
+                        &:hover {
+                            background-color: $grey-color;
+                        }
+                    }
+                }
+                &-control-next,
+                &-control-prev {
+                    top: 50% !important;
+                    width: fit-content !important;
+                    height: fit-content !important;
+                    svg {
+                        padding: 10px 20px;
+                        background-color: $main-color;
+                        border-radius: 50%;
+                    }
+                }
+                &-control-next {
+                    transform: translate(-50%, 50%);
+                }
+                &-control-prev {
+                    transform: translate(50%, 50%);
+                }
+            }
+        }
+    }
+    .owners {
+        h3 {
+            margin-top: 50px;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        h4 {
+            margin-top: 10px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    section {
+        &.about-us {
+            .text-slider {
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        &.about-us {
+            .carousel-caption {
+                padding: 65px 35px 35px;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    section {
+        &.about-us {
+            .text-slider {
+                .carousel-item {
+                    min-height: 393px;
                 }
             }
         }
