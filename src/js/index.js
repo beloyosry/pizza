@@ -5,6 +5,9 @@ import "popper.js/dist/popper.min";
 import "../sass/style.scss";
 import "@fortawesome/fontawesome-free/js/all.min.js";
 import "/src/js/chatBox";
+import AOS from 'aos';
+
+AOS.init();
 
 document.getElementById("date").innerHTML = new Date().getFullYear();
 
