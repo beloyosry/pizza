@@ -23,9 +23,15 @@
                 }
             }
 
-            .active a {
+            .active .nav-link:not(.lang) {
                 color: $main-color !important;
                 border-bottom: 1px solid $custom-color;
+            }
+            .nav-link {
+                &.active:not(.lang) {
+                    color: $main-color !important;
+                    border-bottom: 1px solid $custom-color;
+                }
             }
         }
     }
@@ -47,12 +53,22 @@
             }
         }
 
-        .active a {
+        .active a:not(.lang) {
             color: $main-color !important;
             border-bottom: 1px solid $dark-grey-color !important;
 
             &:hover {
                 color: $custom-color !important;
+            }
+        }
+        .nav-link {
+            &.active:not(.lang) {
+                color: $main-color !important;
+                border-bottom: 1px solid $dark-grey-color !important;
+
+                &:hover {
+                    color: $custom-color !important;
+                }
             }
         }
     }
@@ -397,13 +413,13 @@
                 margin-bottom: 35px;
             }
             .input-group {
-                direction: ltr !important;
+                direction: ltr;
 
                 input {
                     border-radius: 0;
-                    &::placeholder {
-                        text-align: right;
-                    }
+                    text-align: right;
+                    // &::placeholder {
+                    // }
                 }
                 button {
                     border-radius: 0;

@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/logo-white-red.png" type="image/x-icon">
-    
-    <title>بيتزا مارجريت</title>
+
+    <title data-lang="pizza1">بيتزا مارجريت</title>
 </head>
 
 <body>
-    <!-- <div class="chatbox-wrapper">
+    <div class="chatbox-wrapper">
         <div class="chatbox-toggle">
             <i class='bx bx-message-dots'></i>
         </div>
@@ -37,8 +37,19 @@
                 </div>
             </div>
             <div class="chatbox-message-content">
-                <h4 class="chatbox-message-no-message">سعداء لتواصلكم معنا!</h4>
-  
+                <h4 class="chatbox-message-no-message" data-lang="chatBox">سعداء لتواصلكم معنا!</h4>
+                <!-- <div class="chatbox-message-item sent">
+					<span class="chatbox-message-item-text">
+						Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Quod, fugiat?
+					</span>
+					<span class="chatbox-message-item-time">08:30</span>
+				</div>
+				<div class="chatbox-message-item received">
+					<span class="chatbox-message-item-text">
+						Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Quod, fugiat?
+					</span>
+					<span class="chatbox-message-item-time">08:30</span>
+				</div> -->
             </div>
             <div class="chatbox-message-bottom">
                 <form action="#" class="chatbox-message-form">
@@ -46,7 +57,7 @@
                     <button type="submit" class="chatbox-message-submit"><i class='bx bx-send'></i></button>
                 </form>
             </div>
-        </div> -->
+        </div>
     </div>
     <div class="container-fluid">
         <section class="top-menu-1 mb-5">
@@ -65,19 +76,22 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item p-2">
-                                    <a class="nav-link" href="index.html">الرئيسية</a>
+                                    <a class="nav-link" href="index.html" data-lang="navHome">الرئيسية</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link" href="index.html#menu">المنيو</a>
+                                    <a class="nav-link" href="index.html#menu" data-lang="navMenu">المنيو</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link" href="index.html#offers">العروض</a>
+                                    <a class="nav-link" href="index.html#offers" data-lang="navOffers">العروض</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link" href="about.html">حول المطعم</a>
+                                    <a class="nav-link" href="about.html" data-lang="navAbout">حول المطعم</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link" href="contactUs.html">تواصل معنا</a>
+                                    <a class="nav-link" href="contactUs.html" data-lang="navContact">تواصل معنا</a>
+                                </li>
+                                <li class="nav-item p-2">
+                                    <a class="nav-link lang" href="#">English</a>
                                 </li>
                             </ul>
                         </div>
@@ -94,22 +108,22 @@
                                 <div class="carousel slide" id="carousel-product-images">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <img src="images/first-pizza_1.jpg" alt="">
+                                            <img src="images/first-pizza_1.png" alt="">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="images/first-pizza_2.jpg" alt="">
+                                            <img src="images/first-pizza_2.png" alt="">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="images/first-pizza_3.jpg" alt="">
+                                            <img src="images/first-pizza_3.png" alt="">
                                         </div>
                                     </div>
                                     <div class="carousel-indicators custom-carousel-indicators-primary">
                                         <img data-bs-target="#carousel-product-images" data-bs-slide-to="0"
-                                            class="active" src="images/first-pizza_1.jpg" alt="">
+                                            class="active" src="images/first-pizza_1.png" alt="">
                                         <img data-bs-target="#carousel-product-images" data-bs-slide-to="1"
-                                            src="images/first-pizza_2.jpg" alt="">
+                                            src="images/first-pizza_2.png" alt="">
                                         <img data-bs-target="#carousel-product-images" data-bs-slide-to="2"
-                                            src="images/first-pizza_3.jpg" alt="">
+                                            src="images/first-pizza_3.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -117,13 +131,13 @@
                                 <form id="form-product-selection" class="borders-between">
                                     <div class="row">
                                         <div class="clearfix block-100">
-                                            <h2 class="float-right">بيتزا مارجريت</h2>
+                                            <h2 class="float-right" data-lang="pizza1">بيتزا مارجريت</h2>
                                             <div class="float-left price large" data-product-price>15$</div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <p class="product-description">
+                                        <p class="product-description" data-lang="pizzaDescription1">
                                             بيتزا مارجريت: هي الشكل الأساسي المعروف لطبق البيتزا، أي تلك التي تحتوي على
                                             صلصة بندورة بسيطة منكَّهة بالأعشاب ومغطّاة بالجبنة، وقد سُمّيت بهذا الاسم
                                             نسبةً إلى الملكة مارجريتا؛ حيث ابتكر الطاهي روفائيل اسبوزيتو هذا الطبق
@@ -131,7 +145,7 @@
                                         </p>
                                     </div>
                                     <div class="row size-and-type">
-                                        <div class="col-md-6">
+                                        <div class="col-md-6" data-lang="pizzaSize">
                                             الحجم:
                                             <br />
                                             <div class="product-option active">
@@ -154,17 +168,17 @@
                                             </div>
                                         </div>
                                         <!--اختيار اللون-->
-                                        <div class="col-md-6">
+                                        <div class="col-md-6" data-lang="pizzaType">
                                             نوع العجينة:
                                             <br />
                                             <div class="product-option type active">
-                                                <label>
+                                                <label data-lang="pan">
                                                     نحيفة
                                                     <input type="radio" name="type" value="thin" checked>
                                                 </label>
                                             </div>
                                             <div class="product-option type">
-                                                <label>
+                                                <label data-lang="thin">
                                                     سميكة
                                                     <input type="radio" name="type" value="classic">
                                                 </label>
@@ -174,7 +188,7 @@
                                     <div class="row product-quantity clearfix">
                                         <div class="col-12 d-flex align-items-center justify-content-between">
                                             <div class="clearfix">
-                                                <div class="float-right label">
+                                                <div class="float-right label" data-lang="quantity">
                                                     العدد المطلوب:
                                                 </div>
                                                 <div class="float-right">
@@ -187,7 +201,7 @@
                                                 </div>
                                             </div>
                                             <div class="total">
-                                                <p style="display: inline;">الإجمالي:</p>
+                                                <p style="display: inline;" data-lang="total">الإجمالي:</p>
                                                 <br>
                                                 <span id="total-price"></span>
                                             </div>
@@ -196,7 +210,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <button type="submit" class="btn custom-btn custom-btn-with-icon">
-                                                <span>
+                                                <span data-lang="addPizzaToCart">
                                                     إضافة لعربة الشراء
                                                     <i class="fas fa-cart-plus fa-lg"></i>
                                                 </span>
@@ -208,15 +222,16 @@
                         </div>
                         <div class="row">
                             <div class="comments block-100">
-                                <h3 class="custom-heading heading-inline heading-with-border-bottom">
+                                <h3 class="custom-heading heading-inline heading-with-border-bottom"
+                                    data-lang="comments">
                                     التعليقات على المُنتج
                                 </h3>
                                 <div class="borders-between">
                                     <div class="row">
                                         <div class="media">
-                                            <img src="images/reviewer_1.jpg" alt="محمد هاني">
+                                            <img src="images/reviewer_1.png" alt="محمد هاني">
                                             <div class="media-body">
-                                                <h4 class="media-heading">
+                                                <h4 class="media-heading" data-lang="clientName1">
                                                     محمد هاني
                                                 </h4>
                                                 <div class="rating">
@@ -226,7 +241,7 @@
                                                     <span class="fas fa-star active"></span>
                                                     <span class="fas fa-star"></span>
                                                 </div>
-                                                <p>
+                                                <p data-lang="comment1">
                                                     لذيذ جدا و التوصيل في وقت قياسي
                                                 </p>
                                             </div>
@@ -234,9 +249,9 @@
                                     </div>
                                     <div class="row pb-0">
                                         <div class="media">
-                                            <img src="images/reviewer_2.jpg" alt="منى محمود">
+                                            <img src="images/reviewer_2.png" alt="منى محمود">
                                             <div class="media-body">
-                                                <h4 class="media-heading">
+                                                <h4 class="media-heading" data-lang="clientName2">
                                                     منى محمود
                                                 </h4>
                                                 <div class="rating">
@@ -246,7 +261,7 @@
                                                     <span class="fas fa-star "></span>
                                                     <span class="fas fa-star"></span>
                                                 </div>
-                                                <p>
+                                                <p data-lang="comment2">
                                                     السعر مرتفع قليلًا
                                                 </p>
                                             </div>
@@ -256,26 +271,26 @@
                             </div>
                         </div>
                         <div class="row suggestions">
-                            <h3 class="custom-heading col-sm-12">اقترحنا لك</h3>
+                            <h3 class="custom-heading col-sm-12" data-lang="suggestion">اقترحنا لك</h3>
                             <div class="col-lg-3 col-md-4">
                                 <div class="card custom-thumbnail">
                                     <div class="overlay">
-                                        <button class="btn btn-secondary add-to-cart-btn">
+                                        <button class="btn btn-secondary add-to-cart-btn" data-lang="addPizzaToCart">
                                             إضافة للعربة
                                             <i class="fas fa-cart-plus"></i>
                                         </button>
                                     </div>
-                                    <img src="images/pizza-3.jpg" alt="">
+                                    <img src="images/pizza-3.png" alt="">
                                     <div class="card-body">
                                         <div class="clearfix">
-                                            <h4 class="float-right">بيتزا دجاج</h4>
+                                            <h4 class="float-right" data-lang="pizza3">بيتزا دجاج</h4>
                                             <div class="price float-left">
                                                 30$
                                             </div>
                                         </div>
                                         <div class="clearfix">
-                                            <button
-                                                class="float-left btn btn-default add-to-cart-btn d-block d-lg-none">
+                                            <button class="float-left btn btn-default add-to-cart-btn d-block d-lg-none"
+                                                data-lang="addPizzaToCart">
                                                 إضافة للعربة
                                                 <i class="fas fa-cart-plus"></i>
                                             </button>
@@ -287,22 +302,22 @@
                             <div class="col-lg-3 col-md-4">
                                 <div class="card custom-thumbnail">
                                     <div class="overlay">
-                                        <button class="btn btn-secondary add-to-cart-btn">
+                                        <button class="btn btn-secondary add-to-cart-btn" data-lang="addPizzaToCart">
                                             إضافة للعربة
                                             <i class="fas fa-cart-plus"></i>
                                         </button>
                                     </div>
-                                    <img src="images/pizza-5.jpg" alt="">
+                                    <img src="images/pizza-5.png" alt="">
                                     <div class="card-body">
                                         <div class="clearfix">
-                                            <h4 class="float-right">بيتزا سي فود</h4>
+                                            <h4 class="float-right" data-lang="pizza8">بيتزا سي فود</h4>
                                             <div class="price float-left">
                                                 50$
                                             </div>
                                         </div>
                                         <div class="clearfix">
-                                            <button
-                                                class="float-left btn btn-default add-to-cart-btn d-block d-lg-none">
+                                            <button class="float-left btn btn-default add-to-cart-btn d-block d-lg-none"
+                                                data-lang="addPizzaToCart">
                                                 إضافة للعربة
                                                 <i class="fas fa-cart-plus"></i>
                                             </button>
@@ -315,22 +330,22 @@
                                 <div class="card custom-thumbnail">
                                     <div class="sale">50%</div>
                                     <div class="overlay">
-                                        <button class="btn btn-secondary add-to-cart-btn">
+                                        <button class="btn btn-secondary add-to-cart-btn" data-lang="addPizzaToCart">
                                             إضافة للعربة
                                             <i class="fas fa-cart-plus"></i>
                                         </button>
                                     </div>
-                                    <img src="images/pizza-2.jpg" alt="">
+                                    <img src="images/pizza-2.png" alt="">
                                     <div class="card-body">
                                         <div class="clearfix">
-                                            <h4 class="float-right">بيتزا لحوم</h4>
+                                            <h4 class="float-right" data-lang="pizza7">بيتزا لحوم</h4>
                                             <div class="price float-left">
                                                 40$
                                             </div>
                                         </div>
                                         <div class="clearfix">
-                                            <button
-                                                class="float-left btn btn-default add-to-cart-btn d-block d-lg-none">
+                                            <button class="float-left btn btn-default add-to-cart-btn d-block d-lg-none"
+                                                data-lang="addPizzaToCart">
                                                 إضافة للعربة
                                                 <i class="fas fa-cart-plus"></i>
                                             </button>
@@ -342,22 +357,22 @@
                             <div class="col-lg-3 col-md-4 d-none d-lg-block">
                                 <div class="card custom-thumbnail">
                                     <div class="overlay">
-                                        <button class="btn btn-secondary add-to-cart-btn">
+                                        <button class="btn btn-secondary add-to-cart-btn" data-lang="addPizzaToCart">
                                             إضافة للعربة
                                             <i class="fas fa-cart-plus"></i>
                                         </button>
                                     </div>
-                                    <img src="images/pizza-7.jpg" alt="">
+                                    <img src="images/pizza-7.png" alt="">
                                     <div class="card-body">
                                         <div class="clearfix">
-                                            <h4 class="float-right">بيتزا خضار</h4>
+                                            <h4 class="float-right" data-lang="pizza2">بيتزا خضار</h4>
                                             <div class="price float-left">
                                                 25$
                                             </div>
                                         </div>
                                         <div class="clearfix">
-                                            <button
-                                                class="float-left btn btn-default add-to-cart-btn d-block d-lg-none">
+                                            <button class="float-left btn btn-default add-to-cart-btn d-block d-lg-none"
+                                                data-lang="addPizzaToCart">
                                                 إضافة للعربة
                                                 <i class="fas fa-cart-plus"></i>
                                             </button>
@@ -392,29 +407,30 @@
                                 <div class="col-md-3 important-links">
                                     <p class="phone-number">704-910-3052</p>
                                     <ul>
-                                        <li><a href="#">سياسة الخصوصية</a></li>
-                                        <li><a href="#">إخلاء المسؤولية القانونية</a></li>
-                                        <li><a href="#">شروط الاستخدام</a></li>
-                                        <li><a href="#">انضم إلى فريقنا</a></li>
+                                        <li><a href="#" data-lang="footerLink1">سياسة الخصوصية</a></li>
+                                        <li><a href="#" data-lang="footerLink2">إخلاء المسؤولية القانونية</a></li>
+                                        <li><a href="#" data-lang="footerLink3">شروط الاستخدام</a></li>
+                                        <li><a href="#" data-lang="footerLink4">انضم إلى فريقنا</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-md-3 working-info">
-                                    <h3>ساعات العمل</h3>
+                                    <h3 data-lang="footerWorkHours">ساعات العمل</h3>
                                     <ul>
-                                        <li>الأحد - الخميس</li>
+                                        <li data-lang="footerDays1">الأحد - الخميس</li>
                                         <li>10:30 AM TO 10:00 PM</li>
-                                        <li>الجمعة - السبت</li>
+                                        <li data-lang="footerDays2">الجمعة - السبت</li>
                                         <li>10:30 AM TO 11:00 PM</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-3 join-us">
-                                    <h3>اشترك ليصلك كل <span>جديد</span></h3>
+                                    <h3 data-lang="footerSubscribe">اشترك ليصلك كل <span>جديد</span></h3>
                                     <form class="input-group mb-3 needs-validation" novalidate>
-                                        <input type="email" class="form-control" placeholder="البريد الإلكتروني"
-                                            aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                                        <input type="email" class="form-control" data-lang="email"
+                                            placeholder="البريد الإلكتروني" aria-label="Recipient's username"
+                                            aria-describedby="button-addon2" required>
                                         <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i
                                                 class="fas fa-paper-plane"></i></button>
-                                        <div class="invalid-feedback">
+                                        <div class="invalid-feedback" data-lang="formInvalid">
                                             أدخل عنوان بريدك الإلكتروني أولاً من فضلك
                                         </div>
                                     </form>
@@ -428,19 +444,19 @@
                     <div class="col-md-2 links text-center">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active p-2">
-                                <a class="nav-link" href="index.html">الرئيسية</a>
+                                <a class="nav-link" href="index.html" data-lang="navHome">الرئيسية</a>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link" href="index.html">المنيو</a>
+                                <a class="nav-link" href="index.html#menu" data-lang="navMenu">المنيو</a>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link" href="index.html">العروض</a>
+                                <a class="nav-link" href="index.html#offers" data-lang="navOffers">العروض</a>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link" href="about.html">حول المطعم</a>
+                                <a class="nav-link" href="about.html" data-lang="navAbout">حول المطعم</a>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link" href="contactUs.html">تواصل معنا</a>
+                                <a class="nav-link" href="contactUs.html" data-lang="navContact">تواصل معنا</a>
                             </li>
                         </ul>
                     </div>

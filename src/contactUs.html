@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="images/logo-white-red.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>تواصل معنا</title>
+    <title data-lang="contactTitle">تواصل معنا</title>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="chatbox-message-content">
-                <h4 class="chatbox-message-no-message">سعداء لتواصلكم معنا!</h4>
+                <h4 class="chatbox-message-no-message" data-lang="chatBox">سعداء لتواصلكم معنا!</h4>
                 <!-- <div class="chatbox-message-item sent">
 					<span class="chatbox-message-item-text">
 						Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Quod, fugiat?
@@ -77,19 +77,22 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item p-2">
-                                    <a class="nav-link" href="index.html">الرئيسية</a>
+                                    <a class="nav-link" href="index.html" data-lang="navHome">الرئيسية</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link" href="index.html#menu">المنيو</a>
+                                    <a class="nav-link" href="index.html#menu" data-lang="navMenu">المنيو</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link" href="index.html#offers">العروض</a>
+                                    <a class="nav-link" href="index.html#offers" data-lang="navOffers">العروض</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link" href="about.html">حول المطعم</a>
+                                    <a class="nav-link" href="about.html" data-lang="navAbout">حول المطعم</a>
                                 </li>
                                 <li class="nav-item active p-2">
-                                    <a class="nav-link" href="contactUs.html">تواصل معنا</a>
+                                    <a class="nav-link" href="contactUs.html" data-lang="navContact">تواصل معنا</a>
+                                </li>
+                                <li class="nav-item p-2">
+                                    <a class="nav-link lang" href="#">English</a>
                                 </li>
                             </ul>
                         </div>
@@ -101,24 +104,31 @@
             <div class="container">
                 <div class="row location-header">
                     <div class="container">
-                        <a href="#" class="location-name">
+                        <a href="#" class="location-name" data-lang="contactBranches">
                             الفروع
                         </a>
                         <ul class="location-nav ml-auto" id="branches">
                             <li class="location-item p-2 active">
-                                <a class="location-link" href="#" data-branch="nasrCity">مدينة نصر</a>
+                                <a class="location-link" href="#" data-branch="nasrCity" data-lang="branch1"
+                                    data-branch-key="branch1">مدينة
+                                    نصر</a>
                             </li>
                             <li class="location-item p-2">
-                                <a class="location-link" href="#" data-branch="masrElGedida">مصر الجديدة</a>
+                                <a class="location-link" href="#" data-branch="masrElGedida" data-lang="branch2"
+                                    data-branch-key="branch2">مصر
+                                    الجديدة</a>
                             </li>
                             <li class="location-item p-2">
-                                <a class="location-link" href="#" data-branch="mokattam">المقطم</a>
+                                <a class="location-link" href="#" data-branch="mokattam" data-lang="branch3"
+                                    data-branch-key="branch3">المقطم</a>
                             </li>
                             <li class="location-item p-2">
-                                <a class="location-link" href="#" data-branch="giza">الجيزة</a>
+                                <a class="location-link" href="#" data-branch="giza" data-lang="branch4"
+                                    data-branch-key="branch4">الجيزة</a>
                             </li>
                             <li class="location-item p-2">
-                                <a class="location-link" href="#" data-branch="elTagamoa ">التجمع</a>
+                                <a class="location-link" href="#" data-branch="elTagamoa " data-lang="branch5"
+                                    data-branch-key="branch5">التجمع</a>
                             </li>
                         </ul>
 
@@ -134,7 +144,7 @@
                         <p class="address-body" id="branch-address">
                             15 شارع عباس العقاد - القاهرة
                         </p>
-                        <button class="address-button btn custom-btn">أطلب الآن</button>
+                        <button class="address-button btn custom-btn" data-lang="orderNow">أطلب الآن</button>
                     </div>
                     <div class="col-md-4 map">
                         <iframe id="map"
@@ -145,12 +155,12 @@
                 </div>
                 <div class="row footer">
                     <div class="col-md-4 events">
-                        <h3>مواعيد العمل</h3>
+                        <h3 data-lang="footerWorkHours">مواعيد العمل</h3>
                         <div class="row">
                             <div class="col-md-6 events-item">
                                 <ul>
-                                    <li>الأحد - الخميس</li>
-                                    <li>الجمعة - السبت</li>
+                                    <li data-lang="footerDays1">الأحد - الخميس</li>
+                                    <li data-lang="footerDays2">الجمعة - السبت</li>
                                 </ul>
                             </div>
                             <div class="col-md-6 events-item">
@@ -161,11 +171,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <h3>أماكن التوصيل</h3>
+                            <h3 data-lang="contactDelivery">أماكن التوصيل</h3>
                             <div class="col-md-12 events-item">
                                 <ul>
-                                    <li>القاهرة</li>
-                                    <li>الجيزة</li>
+                                    <li data-lang="contactDeliveryPlace1">القاهرة</li>
+                                    <li data-lang="contactDeliveryPlace2">الجيزة</li>
                                 </ul>
                             </div>
                         </div>
@@ -173,25 +183,25 @@
                     <div class="col-md-4 gallery">
                         <div class="row">
                             <div class="col-md-4 gallery-item">
-                                <img src="images/gallery-1.jpg" alt="">
-                                <img src="images/gallery-2.jpg" alt="">
+                                <img src="images/gallery-1.png" alt="">
+                                <img src="images/gallery-2.png" alt="">
                             </div>
                             <div class="col-md-4 gallery-item">
-                                <img src="images/gallery-3.jpg" alt="">
-                                <img src="images/gallery-4.jpg" alt="">
+                                <img src="images/gallery-3.png" alt="">
+                                <img src="images/gallery-4.png" alt="">
                             </div>
                             <div class="col-md-4 gallery-item">
-                                <img src="images/gallery-5.jpg" alt="">
-                                <img src="images/pizza-5.jpg" alt="">
+                                <img src="images/gallery-5.png" alt="">
+                                <img src="images/pizza-5.png" alt="">
                             </div>
                         </div>
                     </div>
                     <form class="col-md-4 form needs-validation" novalidate>
                         <input type="text" class="form-control mb-3" placeholder="الإسم" required>
                         <input type="email" class="form-control mb-3" placeholder="البريد الإلكتروني" required>
-                        <textarea class="form-control mb-3" placeholder="أترك رسالة لنا" required></textarea>
-                        <button type="submit" class="btn btn-light custom-btn">أرسل</button>
-                        <div class="invalid-feedback">
+                        <textarea class="form-control mb-3 message-textarea" placeholder="أترك رسالة لنا" required></textarea>
+                        <button type="submit" class="btn btn-light custom-btn" data-lang="sendBtn">أرسل</button>
+                        <div class="invalid-feedback" data-lang="formInvalid">
                             من فضلك أدخل جميع الحقول
                         </div>
                     </form>
@@ -220,29 +230,30 @@
                             <div class="col-md-3 important-links">
                                 <p class="phone-number">704-910-3052</p>
                                 <ul>
-                                    <li><a href="#">سياسة الخصوصية</a></li>
-                                    <li><a href="#">إخلاء المسؤولية القانونية</a></li>
-                                    <li><a href="#">شروط الاستخدام</a></li>
-                                    <li><a href="#">انضم إلى فريقنا</a></li>
+                                    <li><a href="#" data-lang="footerLink1">سياسة الخصوصية</a></li>
+                                    <li><a href="#" data-lang="footerLink2">إخلاء المسؤولية القانونية</a></li>
+                                    <li><a href="#" data-lang="footerLink3">شروط الاستخدام</a></li>
+                                    <li><a href="#" data-lang="footerLink4">انضم إلى فريقنا</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-3 working-info">
-                                <h3>ساعات العمل</h3>
+                                <h3 data-lang="footerWorkHours">ساعات العمل</h3>
                                 <ul>
-                                    <li>الأحد - الخميس</li>
+                                    <li data-lang="footerDays1">الأحد - الخميس</li>
                                     <li>10:30 AM TO 10:00 PM</li>
-                                    <li>الجمعة - السبت</li>
+                                    <li data-lang="footerDays2">الجمعة - السبت</li>
                                     <li>10:30 AM TO 11:00 PM</li>
                                 </ul>
                             </div>
                             <div class="col-md-3 join-us">
-                                <h3>اشترك ليصلك كل <span>جديد</span></h3>
+                                <h3 data-lang="footerSubscribe">اشترك ليصلك كل <span>جديد</span></h3>
                                 <form class="input-group mb-3 needs-validation" novalidate>
-                                    <input type="email" class="form-control" placeholder="البريد الإلكتروني"
-                                        aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                                    <input type="email" class="form-control" data-lang="email"
+                                        placeholder="البريد الإلكتروني" aria-label="Recipient's username"
+                                        aria-describedby="button-addon2" required>
                                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i
                                             class="fas fa-paper-plane"></i></button>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback" data-lang="formInvalid">
                                         أدخل عنوان بريدك الإلكتروني أولاً من فضلك
                                     </div>
                                 </form>
@@ -256,19 +267,19 @@
                 <div class="col-md-2 links text-center">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active p-2">
-                            <a class="nav-link" href="index.html">الرئيسية</a>
+                            <a class="nav-link" href="index.html" data-lang="navHome">الرئيسية</a>
                         </li>
                         <li class="nav-item p-2">
-                            <a class="nav-link" href="index.html">المنيو</a>
+                            <a class="nav-link" href="index.html#menu" data-lang="navMenu">المنيو</a>
                         </li>
                         <li class="nav-item p-2">
-                            <a class="nav-link" href="index.html">العروض</a>
+                            <a class="nav-link" href="index.html#offers" data-lang="navOffers">العروض</a>
                         </li>
                         <li class="nav-item p-2">
-                            <a class="nav-link" href="about.html">حول المطعم</a>
+                            <a class="nav-link" href="about.html" data-lang="navAbout">حول المطعم</a>
                         </li>
                         <li class="nav-item p-2">
-                            <a class="nav-link" href="contactUs.html">تواصل معنا</a>
+                            <a class="nav-link" href="contactUs.html" data-lang="navContact">تواصل معنا</a>
                         </li>
                     </ul>
                 </div>

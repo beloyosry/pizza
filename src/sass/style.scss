@@ -42,7 +42,8 @@ a {
 
 input {
     &::placeholder {
-        text-align: right !important;
+        // text-align: right ;
+        direction: var(--placeholder-dir);
     }
 }
 
@@ -73,6 +74,7 @@ input {
 
     .custom-btn {
         padding: 10px 20px;
+        margin: 0 -23px;
     }
     span {
         display: inline-block;
@@ -113,12 +115,12 @@ nav {
                 }
             }
 
-            .active a {
+            .active .nav-link:not(.lang) {
                 color: $main-color !important;
                 border-bottom: 1px solid $custom-color;
             }
             .nav-link {
-                &.active {
+                &.active:not(.lang) {
                     color: $main-color !important;
                     border-bottom: 1px solid $custom-color;
                 }
@@ -143,7 +145,7 @@ nav {
             }
         }
 
-        .active a {
+        .active a:not(.lang) {
             color: $main-color !important;
             border-bottom: 1px solid $dark-grey-color !important;
 
@@ -152,7 +154,7 @@ nav {
             }
         }
         .nav-link {
-            &.active {
+            &.active:not(.lang) {
                 color: $main-color !important;
                 border-bottom: 1px solid $dark-grey-color !important;
 
@@ -181,6 +183,7 @@ nav {
                 background-color: rgba($color: $grey-color, $alpha: 0.3);
                 top: 0;
                 right: 0;
+                left: 0;
                 height: 100%;
                 width: 100%;
                 display: flex !important;
@@ -403,6 +406,7 @@ footer {
             margin-bottom: 50px;
         }
         &-about {
+            margin-left: 25%;
             p {
                 span {
                     color: $main-color;
@@ -426,9 +430,11 @@ footer {
                     width: 100%;
                     padding: 80px 70px 35px;
                     right: 0;
+                    left: 0;
                     img {
                         position: absolute;
                         top: 0;
+                        right: 50%;
                         transform: translate(50%, -50%);
                         -webkit-transform: translate(50%, -50%);
                         -moz-transform: translate(50%, -50%);
