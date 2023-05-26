@@ -9,6 +9,7 @@ import "./lang";
 import { translations } from "./lang";
 import { currentLang } from "./lang";
 import AOS from "aos";
+import { event } from "jquery";
 
 AOS.init();
 
@@ -34,6 +35,23 @@ function scrollFunction() {
 window.onscroll = function () {
     scrollFunction();
 };
+
+// window.addEventListener("load", (event) => {
+//     var element1 = document.getElementById("loading");
+//     element1.classList.add("d-none");
+//     var element1 = document.getElementById("page-scroll-hide");
+//     element1.classList.add("overflow-auto");
+// });
+
+window.addEventListener("load", (event) => {
+    document.querySelector(".chatbox-wrapper").style.display = "none";
+    document.body.style.overflow = "hidden";
+    setTimeout(function () {
+        document.getElementById("splash-screen").style.display = "none";
+        document.querySelector(".chatbox-wrapper").style.display = "initial";
+        document.body.style.overflow = "auto";
+    }, 5000);
+});
 
 export function createBranchesList() {
     const branchesList = document.querySelector("#branches");
