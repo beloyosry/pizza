@@ -98,6 +98,21 @@
                     </li>
                 </ul>
             </div>
+            <ul class="navbar-nav ml-auto cart-list">
+                <li class="nav-item p-2">
+                    <div class="cart-container">
+                        <a href="cart.html" class="nav-link cart">
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        <div class="cart-dropdown">
+                            <div class="product-total">
+                                <div class="total-text">Total:</div>
+                                <div class="total-price"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
     </nav>
     <div class="container-fluid">
@@ -223,7 +238,7 @@
                     <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                         <div class="card mb-5" style="width: 23rem;">
                             <img src="images/pizza-1.png" class="card-img-top" alt="first-pizza">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pizza">
                                 <h5 class="card-title" data-lang="pizza7">بيتزا لحوم</h5>
                                 <div class="pizza-details">
                                     <div class="dropdown">
@@ -231,20 +246,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="size">
                                             الحجم
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-size">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        XL
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        checked id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Large"
+                                                        name="pizza-size" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         L
                                                     </label>
@@ -252,10 +258,19 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Medium"
+                                                        name="pizza-size" checked id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        SM
+                                                        M
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Small"
+                                                        name="pizza-size" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        S
                                                     </label>
                                                 </div>
                                             </li>
@@ -266,11 +281,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="type">
                                             نوع العجينة
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-type">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thin Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="pan">
                                                         بان
@@ -279,8 +294,8 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thick Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="thin">
                                                         نحيفة
@@ -291,8 +306,8 @@
                                     </div>
                                 </div>
                                 <div class="order-price">
-                                    <a href="" class="btn btn-light custom-btn add-to-cart-btn"
-                                        data-lang="addToCart">إضافة</a>
+                                    <a class="add-to-cart-btn custom-btn add-to-cart-btn" data-lang="addToCart"
+                                        data-name="Meat Pizza" data-price="$35">إضافة</a>
                                     <span class="price">35$</span>
                                 </div>
                             </div>
@@ -301,7 +316,7 @@
                     <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                         <div class="card mb-5" style="width: 23rem;">
                             <img src="images/pizza-2.png" class="card-img-top" alt="first-pizza">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pizza">
                                 <h5 class="card-title" data-lang="pizza6">بيتزا ببروني</h5>
                                 <div class="pizza-details">
                                     <div class="dropdown">
@@ -309,20 +324,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="size">
                                             الحجم
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-size">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        XL
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        checked id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Large"
+                                                        name="pizza-size" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         L
                                                     </label>
@@ -330,10 +336,19 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Medium"
+                                                        name="pizza-size" checked id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        SM
+                                                        M
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Small"
+                                                        name="pizza-size" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        S
                                                     </label>
                                                 </div>
                                             </li>
@@ -344,11 +359,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="type">
                                             نوع العجينة
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-type">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thin Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="pan">
                                                         بان
@@ -357,8 +372,8 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thick Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="thin">
                                                         نحيفة
@@ -369,8 +384,8 @@
                                     </div>
                                 </div>
                                 <div class="order-price">
-                                    <a href="" class="btn btn-light custom-btn add-to-cart-btn"
-                                        data-lang="addToCart">إضافة</a>
+                                    <a class="add-to-cart-btn custom-btn add-to-cart-btn" data-lang="addToCart"
+                                        data-name="Pepperoni Pizza" data-price="$20">إضافة</a>
                                     <span class="price">20$</span>
                                 </div>
                             </div>
@@ -379,7 +394,7 @@
                     <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                         <div class="card mb-5" style="width: 23rem;">
                             <img src="images/pizza-3.png" class="card-img-top" alt="first-pizza">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pizza">
                                 <h5 class="card-title" data-lang="pizza5">بيتزا تونة</h5>
                                 <div class="pizza-details">
                                     <div class="dropdown">
@@ -387,20 +402,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="size">
                                             الحجم
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-size">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        XL
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        checked id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Large"
+                                                        name="pizza-size" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         L
                                                     </label>
@@ -408,10 +414,19 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Medium"
+                                                        name="pizza-size" checked id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        SM
+                                                        M
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Small"
+                                                        name="pizza-size" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        S
                                                     </label>
                                                 </div>
                                             </li>
@@ -422,11 +437,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="type">
                                             نوع العجينة
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-type">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thin Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="pan">
                                                         بان
@@ -435,8 +450,8 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thick Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="thin">
                                                         نحيفة
@@ -447,8 +462,8 @@
                                     </div>
                                 </div>
                                 <div class="order-price">
-                                    <a href="" class="btn btn-light custom-btn add-to-cart-btn"
-                                        data-lang="addToCart">إضافة</a>
+                                    <a class="add-to-cart-btn custom-btn add-to-cart-btn" data-lang="addToCart"
+                                        data-name="Tuna Pizza" data-price="$50">إضافة</a>
                                     <span class="price">50$</span>
                                 </div>
                             </div>
@@ -457,7 +472,7 @@
                     <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                         <div class="card mb-5" style="width: 23rem;">
                             <img src="images/pizza-4.png" class="card-img-top" alt="first-pizza">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pizza">
                                 <h5 class="card-title" data-lang="pizza4">بيتزا سلامي</h5>
                                 <div class="pizza-details">
                                     <div class="dropdown">
@@ -465,20 +480,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="size">
                                             الحجم
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-size">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        XL
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        checked id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Large"
+                                                        name="pizza-size" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         L
                                                     </label>
@@ -486,10 +492,19 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Medium"
+                                                        name="pizza-size" checked id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        SM
+                                                        M
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Small"
+                                                        name="pizza-size" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        S
                                                     </label>
                                                 </div>
                                             </li>
@@ -500,11 +515,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="type">
                                             نوع العجينة
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-type">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thin Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="pan">
                                                         بان
@@ -513,8 +528,8 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thick Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="thin">
                                                         نحيفة
@@ -525,8 +540,8 @@
                                     </div>
                                 </div>
                                 <div class="order-price">
-                                    <a href="" class="btn btn-light custom-btn add-to-cart-btn"
-                                        data-lang="addToCart">إضافة</a>
+                                    <a class="add-to-cart-btn custom-btn add-to-cart-btn" data-lang="addToCart"
+                                        data-name="Salami Pizza" data-price="$65">إضافة</a>
                                     <span class="price">65$</span>
                                 </div>
                             </div>
@@ -535,7 +550,7 @@
                     <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                         <div class="card mb-5" style="width: 23rem;">
                             <img src="images/pizza-5.png" class="card-img-top" alt="first-pizza">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pizza">
                                 <h5 class="card-title" data-lang="pizza9">بيتزا سوسيس</h5>
                                 <div class="pizza-details">
                                     <div class="dropdown">
@@ -543,20 +558,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="size">
                                             الحجم
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-size">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        XL
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        checked id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Large"
+                                                        name="pizza-size" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         L
                                                     </label>
@@ -564,10 +570,19 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Medium"
+                                                        name="pizza-size" checked id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        SM
+                                                        M
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Small"
+                                                        name="pizza-size" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        S
                                                     </label>
                                                 </div>
                                             </li>
@@ -578,11 +593,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="type">
                                             نوع العجينة
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-type">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thin Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="pan">
                                                         بان
@@ -591,8 +606,8 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thick Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="thin">
                                                         نحيفة
@@ -603,8 +618,8 @@
                                     </div>
                                 </div>
                                 <div class="order-price">
-                                    <a href="" class="btn btn-light custom-btn add-to-cart-btn"
-                                        data-lang="addToCart">إضافة</a>
+                                    <a class="add-to-cart-btn custom-btn add-to-cart-btn" data-lang="addToCart"
+                                        data-name="Susage Pizza" data-price="$35">إضافة</a>
                                     <span class="price">35$</span>
                                 </div>
                             </div>
@@ -613,7 +628,7 @@
                     <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                         <div class="card mb-5" style="width: 23rem;">
                             <img src="images/pizza-6.png" class="card-img-top" alt="first-pizza">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pizza">
                                 <h5 class="card-title" data-lang="pizza8">بيتزا سي فود</h5>
                                 <div class="pizza-details">
                                     <div class="dropdown">
@@ -621,20 +636,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="size">
                                             الحجم
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-size">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        XL
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        checked id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Large"
+                                                        name="pizza-size" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         L
                                                     </label>
@@ -642,10 +648,19 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Medium"
+                                                        name="pizza-size" checked id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        SM
+                                                        M
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Small"
+                                                        name="pizza-size" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        S
                                                     </label>
                                                 </div>
                                             </li>
@@ -656,11 +671,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="type">
                                             نوع العجينة
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-type">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thin Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="pan">
                                                         بان
@@ -669,8 +684,8 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thick Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="thin">
                                                         نحيفة
@@ -681,8 +696,8 @@
                                     </div>
                                 </div>
                                 <div class="order-price">
-                                    <a href="" class="btn btn-light custom-btn add-to-cart-btn"
-                                        data-lang="addToCart">إضافة</a>
+                                    <a class="add-to-cart-btn custom-btn add-to-cart-btn" data-lang="addToCart"
+                                        data-name="Seafood Pizza" data-price="$25">إضافة</a>
                                     <span class="price">25$</span>
                                 </div>
                             </div>
@@ -691,7 +706,7 @@
                     <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                         <div class="card mb-5" style="width: 23rem;">
                             <img src="images/pizza-7.png" class="card-img-top" alt="first-pizza">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pizza">
                                 <h5 class="card-title" data-lang="pizza3">بيتزا دجاج</h5>
                                 <div class="pizza-details">
                                     <div class="dropdown">
@@ -699,20 +714,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="size">
                                             الحجم
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-size">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        XL
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        checked id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Large"
+                                                        name="pizza-size" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         L
                                                     </label>
@@ -720,10 +726,19 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Medium"
+                                                        name="pizza-size" checked id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        SM
+                                                        M
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Small"
+                                                        name="pizza-size" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        S
                                                     </label>
                                                 </div>
                                             </li>
@@ -734,11 +749,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="type">
                                             نوع العجينة
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-type">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thin Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="pan">
                                                         بان
@@ -747,8 +762,8 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thick Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="thin">
                                                         نحيفة
@@ -759,8 +774,8 @@
                                     </div>
                                 </div>
                                 <div class="order-price">
-                                    <a href="" class="btn btn-light custom-btn add-to-cart-btn"
-                                        data-lang="addToCart">إضافة</a>
+                                    <a class="add-to-cart-btn custom-btn add-to-cart-btn" data-lang="addToCart"
+                                        data-name="Cheken Pizza" data-price="$40">إضافة</a>
                                     <span class="price">40$</span>
                                 </div>
                             </div>
@@ -769,7 +784,7 @@
                     <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                         <div class="card mb-5" style="width: 23rem;">
                             <img src="images/pizza-8.png" class="card-img-top" alt="first-pizza">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pizza">
                                 <h5 class="card-title" data-lang="pizza1">بيتزا مارجريت</h5>
                                 <div class="pizza-details">
                                     <div class="dropdown">
@@ -777,20 +792,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="size">
                                             الحجم
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-size">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        XL
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        checked id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Large"
+                                                        name="pizza-size" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         L
                                                     </label>
@@ -798,10 +804,19 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Medium"
+                                                        name="pizza-size" checked id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        SM
+                                                        M
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Small"
+                                                        name="pizza-size" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        S
                                                     </label>
                                                 </div>
                                             </li>
@@ -812,11 +827,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="type">
                                             نوع العجينة
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-type">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thin Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="pan">
                                                         بان
@@ -825,8 +840,8 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thick Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="thin">
                                                         نحيفة
@@ -837,8 +852,8 @@
                                     </div>
                                 </div>
                                 <div class="order-price">
-                                    <a href="" class="btn btn-light custom-btn add-to-cart-btn"
-                                        data-lang="addToCart">إضافة</a>
+                                    <a class="add-to-cart-btn custom-btn add-to-cart-btn" data-lang="addToCart"
+                                        data-name="Margrit's Pizza" data-price="$25">إضافة</a>
                                     <span class="price">25$</span>
                                 </div>
                             </div>
@@ -847,7 +862,7 @@
                     <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                         <div class="card mb-5" style="width: 23rem;">
                             <img src="images/pizza-4.png" class="card-img-top" alt="first-pizza">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pizza">
                                 <h5 class="card-title" data-lang="pizza4">بيتزا سلامي</h5>
                                 <div class="pizza-details">
                                     <div class="dropdown">
@@ -855,20 +870,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="size">
                                             الحجم
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-size">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        XL
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        checked id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Large"
+                                                        name="pizza-size" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         L
                                                     </label>
@@ -876,10 +882,19 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Medium"
+                                                        name="pizza-size" checked id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        SM
+                                                        M
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Small"
+                                                        name="pizza-size" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        S
                                                     </label>
                                                 </div>
                                             </li>
@@ -890,11 +905,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="type">
                                             نوع العجينة
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-type">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thin Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="pan">
                                                         بان
@@ -903,8 +918,8 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thick Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="thin">
                                                         نحيفة
@@ -915,8 +930,8 @@
                                     </div>
                                 </div>
                                 <div class="order-price">
-                                    <a href="" class="btn btn-light custom-btn add-to-cart-btn"
-                                        data-lang="addToCart">إضافة</a>
+                                    <a class="add-to-cart-btn custom-btn add-to-cart-btn" data-lang="addToCart"
+                                        data-name="Salami Pizza" data-price="$65">إضافة</a>
                                     <span class="price">65$</span>
                                 </div>
                             </div>
@@ -925,7 +940,7 @@
                     <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                         <div class="card mb-5" style="width: 23rem;">
                             <img src="images/pizza-2.png" class="card-img-top" alt="first-pizza">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pizza">
                                 <h5 class="card-title" data-lang="pizza6">بيتزا ببروني</h5>
                                 <div class="pizza-details">
                                     <div class="dropdown">
@@ -933,20 +948,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="size">
                                             الحجم
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-size">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        XL
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        checked id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Large"
+                                                        name="pizza-size" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         L
                                                     </label>
@@ -954,10 +960,19 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Medium"
+                                                        name="pizza-size" checked id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        SM
+                                                        M
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Small"
+                                                        name="pizza-size" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        S
                                                     </label>
                                                 </div>
                                             </li>
@@ -968,11 +983,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="type">
                                             نوع العجينة
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-type">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thin Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="pan">
                                                         بان
@@ -981,8 +996,8 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thick Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="thin">
                                                         نحيفة
@@ -993,8 +1008,8 @@
                                     </div>
                                 </div>
                                 <div class="order-price">
-                                    <a href="" class="btn btn-light custom-btn add-to-cart-btn"
-                                        data-lang="addToCart">إضافة</a>
+                                    <a class="add-to-cart-btn custom-btn add-to-cart-btn" data-lang="addToCart"
+                                        data-name="Pepperoni Pizza" data-price="$20">إضافة</a>
                                     <span class="price">20$</span>
                                 </div>
                             </div>
@@ -1003,7 +1018,7 @@
                     <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                         <div class="card mb-5" style="width: 23rem;">
                             <img src="images/pizza-6.png" class="card-img-top" alt="first-pizza">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pizza">
                                 <h5 class="card-title" data-lang="pizza8">بيتزا سي فود</h5>
                                 <div class="pizza-details">
                                     <div class="dropdown">
@@ -1011,20 +1026,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="size">
                                             الحجم
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-size">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        XL
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        checked id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Large"
+                                                        name="pizza-size" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         L
                                                     </label>
@@ -1032,10 +1038,19 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Medium"
+                                                        name="pizza-size" checked id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        SM
+                                                        M
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Small"
+                                                        name="pizza-size" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        S
                                                     </label>
                                                 </div>
                                             </li>
@@ -1046,11 +1061,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="type">
                                             نوع العجينة
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-type">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thin Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="pan">
                                                         بان
@@ -1059,8 +1074,8 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thick Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="thin">
                                                         نحيفة
@@ -1071,8 +1086,8 @@
                                     </div>
                                 </div>
                                 <div class="order-price">
-                                    <a href="" class="btn btn-light custom-btn add-to-cart-btn"
-                                        data-lang="addToCart">إضافة</a>
+                                    <a class="add-to-cart-btn custom-btn add-to-cart-btn" data-lang="addToCart"
+                                        data-name="SeafoodPizza" data-price="$25">إضافة</a>
                                     <span class="price">25$</span>
                                 </div>
                             </div>
@@ -1081,7 +1096,7 @@
                     <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-center" data-aos="zoom-in">
                         <div class="card mb-5" style="width: 23rem;">
                             <img src="images/pizza-7.png" class="card-img-top" alt="first-pizza">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pizza">
                                 <h5 class="card-title" data-lang="pizza3">بيتزا دجاج</h5>
                                 <div class="pizza-details">
                                     <div class="dropdown">
@@ -1089,20 +1104,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="size">
                                             الحجم
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-size">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        XL
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        checked id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Large"
+                                                        name="pizza-size" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         L
                                                     </label>
@@ -1110,10 +1116,19 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Medium"
+                                                        name="pizza-size" checked id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        SM
+                                                        M
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Small"
+                                                        name="pizza-size" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        S
                                                     </label>
                                                 </div>
                                             </li>
@@ -1124,11 +1139,11 @@
                                             data-bs-toggle="dropdown" aria-expanded="false" data-lang="type">
                                             نوع العجينة
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pizza-type">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thin Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="pan">
                                                         بان
@@ -1137,8 +1152,8 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" value="Thick Crust"
+                                                        name="pizza-type" id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1"
                                                         data-lang="thin">
                                                         نحيفة
@@ -1149,8 +1164,8 @@
                                     </div>
                                 </div>
                                 <div class="order-price">
-                                    <a href="" class="btn btn-light custom-btn add-to-cart-btn"
-                                        data-lang="addToCart">إضافة</a>
+                                    <a class="add-to-cart-btn custom-btn add-to-cart-btn" data-lang="addToCart"
+                                        data-name="Cheken Pizza" data-price="$40">إضافة</a>
                                     <span class="price">40$</span>
                                 </div>
                             </div>

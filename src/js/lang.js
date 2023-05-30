@@ -303,9 +303,9 @@ const setLang = (lang) => {
             $("#form-product-selection").on("submit", function () {
                 alert("Added To Cart");
             });
-            $(".add-to-cart-btn").on("click", function () {
-                alert("Added To Cart");
-            });
+            // $(".add-to-cart-btn").on("click", function () {
+            //     alert("Added To Cart");
+            // });
             $(".card-body").css({ left: "5%" });
             $("input").css({ textAlign: "left" });
             $(".input-group").css({ direction: "rtl" });
@@ -339,9 +339,9 @@ const setLang = (lang) => {
             $("#form-product-selection").on("submit", function () {
                 alert("أضيف المُنتج إلى عربة الشراء");
             });
-            $(".add-to-cart-btn").on("click", function () {
-                alert("أضيف المُنتج إلى عربة الشراء");
-            });
+            // $(".add-to-cart-btn").on("click", function () {
+            //     alert("أضيف المُنتج إلى عربة الشراء");
+            // });
             $(".card-body").css({ left: "-5%" });
             $("input").css({ textAlign: "right" });
             $(".input-group").css({ direction: "rtl" });

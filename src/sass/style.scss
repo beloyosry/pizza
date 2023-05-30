@@ -3,6 +3,7 @@
 @import "./pizza_2.scss";
 @import "./pizza_3.scss";
 @import "./chatBox.scss";
+@import "./cart_icon.scss";
 @import "./variable";
 @import url("https://unpkg.com/aos@2.3.1/dist/aos.css");
 
@@ -38,6 +39,8 @@ ul {
 
 a {
     text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 input {

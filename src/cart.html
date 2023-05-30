@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo-white-red.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Cart</title>
+</head>
+
+<body>
+    <div id="splash-screen">
+        <div id="splash-screen-content">
+            <img id="splash-screen-logo" src="images/Loading/pre-angular-loader.gif" alt="Logo">
+        </div>
+    </div>
+    <div class="chatbox-wrapper">
+        <div class="chatbox-toggle">
+            <i class='bx bx-message-dots'></i>
+        </div>
+        <div class="chatbox-message-wrapper">
+            <div class="chatbox-message-header">
+                <div class="chatbox-message-profile">
+                    <img src="images/logo-red.png" alt="" class="chatbox-message-image">
+                    <div>
+                        <h4 class="chatbox-message-name">ARAPIZZA BOT</h4>
+                        <p class="chatbox-message-status">online</p>
+                    </div>
+                </div>
+                <div class="chatbox-message-dropdown">
+                    <i class='bx bx-dots-vertical-rounded chatbox-message-dropdown-toggle'></i>
+                    <ul class="chatbox-message-dropdown-menu">
+                        <li>
+                            <a href="#">Search</a>
+                        </li>
+                        <li>
+                            <a href="#">Report</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="chatbox-message-content">
+                <h4 class="chatbox-message-no-message" data-lang="chatBox">سعداء لتواصلكم معنا!</h4>
+                <!-- <div class="chatbox-message-item sent">
+					<span class="chatbox-message-item-text">
+						Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Quod, fugiat?
+					</span>
+					<span class="chatbox-message-item-time">08:30</span>
+				</div>
+				<div class="chatbox-message-item received">
+					<span class="chatbox-message-item-text">
+						Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Quod, fugiat?
+					</span>
+					<span class="chatbox-message-item-time">08:30</span>
+				</div> -->
+            </div>
+            <div class="chatbox-message-bottom">
+                <form action="#" class="chatbox-message-form">
+                    <textarea rows="1" placeholder="Type message..." class="chatbox-message-input"></textarea>
+                    <button type="submit" class="chatbox-message-submit"><i class='bx bx-send'></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+            <section class="top-menu">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+                        <div class="container">
+                            <a class="navbar-brand" href="index.html" style="color: #fefefe;">
+                                <img src="images/logo-white-red.png" class="logo" alt="">
+                                <img src="images/logo-red.png" class="logo-transparent" style="display: none;" alt="">
+                                ARA<span style="color: #eb173d;">PIZZA</span></a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item p-2">
+                                        <a class="nav-link" href="index.html" data-lang="navHome">الرئيسية</a>
+                                    </li>
+                                    <li class="nav-item p-2">
+                                        <a class="nav-link" href="index.html#menu" data-lang="navMenu">المنيو</a>
+                                    </li>
+                                    <li class="nav-item p-2">
+                                        <a class="nav-link" href="index.html#offers" data-lang="navOffers">العروض</a>
+                                    </li>
+                                    <li class="nav-item p-2">
+                                        <a class="nav-link" href="about.html" data-lang="navAbout">حول المطعم</a>
+                                    </li>
+                                    <li class="nav-item active p-2">
+                                        <a class="nav-link" href="contactUs.html" data-lang="navContact">تواصل معنا</a>
+                                    </li>
+                                    <li class="nav-item p-2">
+                                        <a class="nav-link lang" href="#">English</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <ul class="navbar-nav ml-auto cart-list">
+                                <li class="nav-item p-2">
+                                    <div class="cart-container">
+                                        <a href="cart.html" class="nav-link cart">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
+                                        <div class="cart-dropdown">
+                                            <div class="product">
+                                                <div class="product-name">
+                                                    <a class="delete-item custom-btn-with-icon"><i
+                                                            class="fa-solid fa-trash"></i></a>
+                                                    Nike Socks
+                                                </div>
+                                                <div class="product-price">$15.00</div>
+                                            </div>
+                                            <div class="product">
+                                                <div class="product-name">
+                                                    <a class="delete-item custom-btn-with-icon"><i
+                                                            class="fa-solid fa-trash"></i></a>
+                                                    Adidas Socks
+                                                </div>
+                                                <div class="product-price">$22.00</div>
+                                            </div>
+                                            <div class="product-total">
+                                                <div class="total-text">Total</div>
+                                                <div class="total">$37.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </section>
+    </div>
+    </div>
+    <footer>
+        <img class="footer-bg" src="images/pizza-footer-bg.png" alt="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 site-info">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-md-3 identity d-flex flex-column align-items-center justify-content-center">
+                                <img src="images/logo-red-white.png" class="w-50" alt="">
+                                <div class="social-links">
+                                    <ul class="d-flex align-items-center justify-content-center">
+                                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                    </ul>
+                                </div>
+                                <p>designed by <span>belal</span></p>
+                            </div>
+                            <div class="col-md-3 important-links">
+                                <p class="phone-number">704-910-3052</p>
+                                <ul>
+                                    <li><a href="#" data-lang="footerLink1">سياسة الخصوصية</a></li>
+                                    <li><a href="#" data-lang="footerLink2">إخلاء المسؤولية القانونية</a></li>
+                                    <li><a href="#" data-lang="footerLink3">شروط الاستخدام</a></li>
+                                    <li><a href="#" data-lang="footerLink4">انضم إلى فريقنا</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 working-info">
+                                <h3 data-lang="footerWorkHours">ساعات العمل</h3>
+                                <ul>
+                                    <li data-lang="footerDays1">الأحد - الخميس</li>
+                                    <li>10:30 AM TO 10:00 PM</li>
+                                    <li data-lang="footerDays2">الجمعة - السبت</li>
+                                    <li>10:30 AM TO 11:00 PM</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 join-us">
+                                <h3 data-lang="footerSubscribe">اشترك ليصلك كل <span>جديد</span></h3>
+                                <form class="input-group mb-3 needs-validation" novalidate>
+                                    <input type="email" class="form-control" data-lang="email"
+                                        placeholder="البريد الإلكتروني" aria-label="Recipient's username"
+                                        aria-describedby="button-addon2" required>
+                                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i
+                                            class="fas fa-paper-plane"></i></button>
+                                    <div class="invalid-feedback" data-lang="formInvalid">
+                                        أدخل عنوان بريدك الإلكتروني أولاً من فضلك
+                                    </div>
+                                </form>
+                                <div class="copyright">
+                                    <p>© <span id="date"></span> <span>Belal </span>. All Rights Reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 links text-center">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active p-2">
+                            <a class="nav-link" href="index.html" data-lang="navHome">الرئيسية</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" href="index.html#menu" data-lang="navMenu">المنيو</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" href="index.html#offers" data-lang="navOffers">العروض</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" href="about.html" data-lang="navAbout">حول المطعم</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" href="contactUs.html" data-lang="navContact">تواصل معنا</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

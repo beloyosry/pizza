@@ -1,0 +1,101 @@
+@import "variable";
+
+.cart-container {
+    width: 200px;
+    min-height: 45px;
+    float: left;
+    position: relative;
+
+    &:hover {
+        .cart-dropdown {
+            display: block;
+        }
+    }
+
+    .cart {
+        width: 25px;
+        padding-top: 12px;
+        padding-left: 15px;
+        color: #fff;
+        font-size: 20px;
+        z-index: 9999;
+    }
+
+    .cart-dropdown {
+        background-color: $dark-grey-color;
+        color: white;
+        display: none;
+        width: 300px;
+        min-height: 100px;
+        position: absolute;
+        left: 0;
+        margin-top: 0;
+        border: 1px solid #455a64;
+        z-index: 9999;
+
+        .product {
+            padding: 10px;
+            border-bottom: 1px solid #455a64;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 13px;
+
+            .delete-item {
+                cursor: pointer;
+                margin: 0 5px;
+                svg {
+                    color: red;
+                    transition: all 0.3s ease;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+
+        .product-total {
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: bold;
+        }
+    }
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.product-list {
+    width: 300px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    margin: 0 auto;
+
+    div {
+        margin: 10px 0;
+        border-bottom: 1px solid #c7c7c7;
+        padding-bottom: 8px;
+        .product-value {
+            float: right;
+        }
+    }
+}
+
+button {
+    position: relative;
+    padding: 0.9em 1.4em;
+    outline: 0;
+    border: 0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 300;
+    background: #455a64;
+    color: #fff;
+}
