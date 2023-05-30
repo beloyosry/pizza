@@ -12,11 +12,44 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar" id="page-scroll-hide">
-    <div id="splash-screen">
+    <div class="toast toast-question" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body">
+            Are you sure you want to delete this item?
+            <div class="mt-2 pt-2 border-top">
+                <button type="button" class="btn btn-primary btn-sm confirm-btn">Delete</button>
+                <button type="button" class="btn btn-secondary btn-sm cancel-btn" data-bs-dismiss="toast">Close</button>
+            </div>
+        </div>
+    </div>
+    <div class="toast toast-regular-deleted align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Item Deleted!
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="toast toast-regular-cancel align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Nothing Changed!
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="toast toast-regular-added align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Item Added
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    <!-- <div id="splash-screen">
         <div id="splash-screen-content">
             <img id="splash-screen-logo" src="images/Loading/pre-angular-loader.gif" alt="Logo">
         </div>
-    </div>
+    </div> -->
     <div class="chatbox-wrapper">
         <div class="chatbox-toggle">
             <i class='bx bx-message-dots'></i>
@@ -101,8 +134,12 @@
             <ul class="navbar-nav ml-auto cart-list">
                 <li class="nav-item p-2">
                     <div class="cart-container">
-                        <a href="cart.html" class="nav-link cart">
+                        <a href="cart.html" class="nav-link cart position-relative">
                             <i class="fa fa-shopping-cart"></i>
+                            <span
+                                class="counter position-absolute translate-middle p-1 bg-danger border border-light rounded-circle">
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
                         </a>
                         <div class="cart-dropdown">
                             <div class="product-total">
@@ -250,8 +287,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Large"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         L
                                                     </label>
                                                 </div>
@@ -259,8 +296,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Medium"
-                                                        name="pizza-size" checked id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size" checked>
+                                                    <label class="form-check-label">
                                                         M
                                                     </label>
                                                 </div>
@@ -268,8 +305,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Small"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         S
                                                     </label>
                                                 </div>
@@ -285,9 +322,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thin Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="pan">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="pan">
                                                         بان
                                                     </label>
                                                 </div>
@@ -295,9 +331,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thick Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="thin">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="thin">
                                                         نحيفة
                                                     </label>
                                                 </div>
@@ -328,8 +363,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Large"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         L
                                                     </label>
                                                 </div>
@@ -337,8 +372,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Medium"
-                                                        name="pizza-size" checked id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size" checked>
+                                                    <label class="form-check-label">
                                                         M
                                                     </label>
                                                 </div>
@@ -346,8 +381,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Small"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         S
                                                     </label>
                                                 </div>
@@ -363,9 +398,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thin Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="pan">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="pan">
                                                         بان
                                                     </label>
                                                 </div>
@@ -373,9 +407,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thick Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="thin">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="thin">
                                                         نحيفة
                                                     </label>
                                                 </div>
@@ -406,8 +439,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Large"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         L
                                                     </label>
                                                 </div>
@@ -415,8 +448,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Medium"
-                                                        name="pizza-size" checked id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size" checked>
+                                                    <label class="form-check-label">
                                                         M
                                                     </label>
                                                 </div>
@@ -424,8 +457,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Small"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         S
                                                     </label>
                                                 </div>
@@ -441,9 +474,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thin Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="pan">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="pan">
                                                         بان
                                                     </label>
                                                 </div>
@@ -451,9 +483,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thick Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="thin">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="thin">
                                                         نحيفة
                                                     </label>
                                                 </div>
@@ -484,8 +515,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Large"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         L
                                                     </label>
                                                 </div>
@@ -493,8 +524,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Medium"
-                                                        name="pizza-size" checked id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size" checked>
+                                                    <label class="form-check-label">
                                                         M
                                                     </label>
                                                 </div>
@@ -502,8 +533,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Small"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         S
                                                     </label>
                                                 </div>
@@ -519,9 +550,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thin Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="pan">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="pan">
                                                         بان
                                                     </label>
                                                 </div>
@@ -529,9 +559,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thick Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="thin">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="thin">
                                                         نحيفة
                                                     </label>
                                                 </div>
@@ -562,8 +591,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Large"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         L
                                                     </label>
                                                 </div>
@@ -571,8 +600,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Medium"
-                                                        name="pizza-size" checked id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size" checked>
+                                                    <label class="form-check-label">
                                                         M
                                                     </label>
                                                 </div>
@@ -580,8 +609,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Small"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         S
                                                     </label>
                                                 </div>
@@ -597,9 +626,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thin Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="pan">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="pan">
                                                         بان
                                                     </label>
                                                 </div>
@@ -607,9 +635,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thick Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="thin">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="thin">
                                                         نحيفة
                                                     </label>
                                                 </div>
@@ -640,8 +667,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Large"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         L
                                                     </label>
                                                 </div>
@@ -649,8 +676,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Medium"
-                                                        name="pizza-size" checked id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size" checked>
+                                                    <label class="form-check-label">
                                                         M
                                                     </label>
                                                 </div>
@@ -658,8 +685,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Small"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         S
                                                     </label>
                                                 </div>
@@ -675,9 +702,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thin Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="pan">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="pan">
                                                         بان
                                                     </label>
                                                 </div>
@@ -685,9 +711,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thick Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="thin">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="thin">
                                                         نحيفة
                                                     </label>
                                                 </div>
@@ -718,8 +743,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Large"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         L
                                                     </label>
                                                 </div>
@@ -727,8 +752,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Medium"
-                                                        name="pizza-size" checked id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size" checked>
+                                                    <label class="form-check-label">
                                                         M
                                                     </label>
                                                 </div>
@@ -736,8 +761,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Small"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         S
                                                     </label>
                                                 </div>
@@ -753,9 +778,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thin Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="pan">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="pan">
                                                         بان
                                                     </label>
                                                 </div>
@@ -763,9 +787,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thick Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="thin">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="thin">
                                                         نحيفة
                                                     </label>
                                                 </div>
@@ -796,8 +819,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Large"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         L
                                                     </label>
                                                 </div>
@@ -805,8 +828,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Medium"
-                                                        name="pizza-size" checked id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size" checked>
+                                                    <label class="form-check-label">
                                                         M
                                                     </label>
                                                 </div>
@@ -814,8 +837,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Small"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         S
                                                     </label>
                                                 </div>
@@ -831,9 +854,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thin Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="pan">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="pan">
                                                         بان
                                                     </label>
                                                 </div>
@@ -841,9 +863,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thick Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="thin">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="thin">
                                                         نحيفة
                                                     </label>
                                                 </div>
@@ -874,8 +895,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Large"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         L
                                                     </label>
                                                 </div>
@@ -883,8 +904,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Medium"
-                                                        name="pizza-size" checked id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size" checked>
+                                                    <label class="form-check-label">
                                                         M
                                                     </label>
                                                 </div>
@@ -892,8 +913,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Small"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         S
                                                     </label>
                                                 </div>
@@ -909,9 +930,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thin Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="pan">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="pan">
                                                         بان
                                                     </label>
                                                 </div>
@@ -919,9 +939,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thick Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="thin">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="thin">
                                                         نحيفة
                                                     </label>
                                                 </div>
@@ -952,8 +971,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Large"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         L
                                                     </label>
                                                 </div>
@@ -961,8 +980,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Medium"
-                                                        name="pizza-size" checked id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size" checked>
+                                                    <label class="form-check-label">
                                                         M
                                                     </label>
                                                 </div>
@@ -970,8 +989,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Small"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         S
                                                     </label>
                                                 </div>
@@ -987,9 +1006,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thin Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="pan">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="pan">
                                                         بان
                                                     </label>
                                                 </div>
@@ -997,9 +1015,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thick Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="thin">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="thin">
                                                         نحيفة
                                                     </label>
                                                 </div>
@@ -1030,8 +1047,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Large"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         L
                                                     </label>
                                                 </div>
@@ -1039,8 +1056,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Medium"
-                                                        name="pizza-size" checked id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size" checked>
+                                                    <label class="form-check-label">
                                                         M
                                                     </label>
                                                 </div>
@@ -1048,8 +1065,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Small"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         S
                                                     </label>
                                                 </div>
@@ -1065,9 +1082,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thin Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="pan">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="pan">
                                                         بان
                                                     </label>
                                                 </div>
@@ -1075,9 +1091,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thick Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="thin">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="thin">
                                                         نحيفة
                                                     </label>
                                                 </div>
@@ -1108,8 +1123,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Large"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         L
                                                     </label>
                                                 </div>
@@ -1117,8 +1132,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Medium"
-                                                        name="pizza-size" checked id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size" checked>
+                                                    <label class="form-check-label">
                                                         M
                                                     </label>
                                                 </div>
@@ -1126,8 +1141,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Small"
-                                                        name="pizza-size" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        name="pizza-size">
+                                                    <label class="form-check-label">
                                                         S
                                                     </label>
                                                 </div>
@@ -1143,9 +1158,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thin Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="pan">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="pan">
                                                         بان
                                                     </label>
                                                 </div>
@@ -1153,9 +1167,8 @@
                                             <li>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" value="Thick Crust"
-                                                        name="pizza-type" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1"
-                                                        data-lang="thin">
+                                                        name="pizza-type">
+                                                    <label class="form-check-label" data-lang="thin">
                                                         نحيفة
                                                     </label>
                                                 </div>

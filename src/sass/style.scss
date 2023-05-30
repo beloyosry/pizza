@@ -50,16 +50,27 @@ input {
     }
 }
 
-.loading {
-    height: 100%;
-    width: 100%;
-    z-index: 999999;
+.toast-regular-deleted,
+.toast-regular-cancel,
+.toast-regular-added,
+.toast-question {
     position: fixed;
-    top: 0;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 9999;
+    transform: translate(-50%, 50%);
+    top: 2%;
+    left: 50%;
+    color: $custom-color !important;
+    background-color: $dark-grey-color !important;
+    opacity: 0.9;
+
+    .confirm-btn {
+        background-color: $main-color !important;
+        border-color: $main-color !important;
+        transition: all 0.3s ease !important;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
 }
 
 #splash-screen {
@@ -81,6 +92,16 @@ input {
     &-logo {
         width: 200px;
     }
+}
+
+.counter {
+    height: 20px !important;
+    width: 20px !important;
+    text-align: center !important;
+    line-height: 10px !important;
+    top: 5px !important;
+    font-size: 10px;
+    color: $custom-color !important;
 }
 
 .custom-btn {

@@ -44,15 +44,15 @@ window.onscroll = function () {
     scrollFunction();
 };
 
-window.addEventListener("load", (event) => {
-    document.querySelector(".chatbox-wrapper").style.display = "none";
-    document.body.style.overflow = "hidden";
-    setTimeout(function () {
-        document.getElementById("splash-screen").style.display = "none";
-        document.querySelector(".chatbox-wrapper").style.display = "initial";
-        document.body.style.overflow = "auto";
-    }, 3000);
-});
+// window.addEventListener("load", (event) => {
+//     document.querySelector(".chatbox-wrapper").style.display = "none";
+//     document.body.style.overflow = "hidden";
+//     setTimeout(function () {
+//         document.getElementById("splash-screen").style.display = "none";
+//         document.querySelector(".chatbox-wrapper").style.display = "initial";
+//         document.body.style.overflow = "auto";
+//     }, 3000);
+// });
 
 export function createBranchesList() {
     const branchesList = document.querySelector("#branches");
