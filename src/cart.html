@@ -16,127 +16,65 @@
             <img id="splash-screen-logo" src="images/Loading/pre-angular-loader.gif" alt="Logo">
         </div>
     </div>
-    <div class="chatbox-wrapper">
-        <div class="chatbox-toggle">
-            <i class='bx bx-message-dots'></i>
-        </div>
-        <div class="chatbox-message-wrapper">
-            <div class="chatbox-message-header">
-                <div class="chatbox-message-profile">
-                    <img src="images/logo-red.png" alt="" class="chatbox-message-image">
-                    <div>
-                        <h4 class="chatbox-message-name">ARAPIZZA BOT</h4>
-                        <p class="chatbox-message-status">online</p>
-                    </div>
-                </div>
-                <div class="chatbox-message-dropdown">
-                    <i class='bx bx-dots-vertical-rounded chatbox-message-dropdown-toggle'></i>
-                    <ul class="chatbox-message-dropdown-menu">
-                        <li>
-                            <a href="#">Search</a>
-                        </li>
-                        <li>
-                            <a href="#">Report</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="chatbox-message-content">
-                <h4 class="chatbox-message-no-message" data-lang="chatBox">سعداء لتواصلكم معنا!</h4>
-                <!-- <div class="chatbox-message-item sent">
-					<span class="chatbox-message-item-text">
-						Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Quod, fugiat?
-					</span>
-					<span class="chatbox-message-item-time">08:30</span>
-				</div>
-				<div class="chatbox-message-item received">
-					<span class="chatbox-message-item-text">
-						Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Quod, fugiat?
-					</span>
-					<span class="chatbox-message-item-time">08:30</span>
-				</div> -->
-            </div>
-            <div class="chatbox-message-bottom">
-                <form action="#" class="chatbox-message-form">
-                    <textarea rows="1" placeholder="Type message..." class="chatbox-message-input"></textarea>
-                    <button type="submit" class="chatbox-message-submit"><i class='bx bx-send'></i></button>
-                </form>
-            </div>
-        </div>
-    </div>
     <div class="container-fluid">
-            <section class="top-menu">
-                <div class="row">
-                    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
-                        <div class="container">
-                            <a class="navbar-brand" href="index.html" style="color: #fefefe;">
-                                <img src="images/logo-white-red.png" class="logo" alt="">
-                                <img src="images/logo-red.png" class="logo-transparent" style="display: none;" alt="">
-                                ARA<span style="color: #eb173d;">PIZZA</span></a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <i class="fas fa-bars"></i>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item p-2">
-                                        <a class="nav-link" href="index.html" data-lang="navHome">الرئيسية</a>
-                                    </li>
-                                    <li class="nav-item p-2">
-                                        <a class="nav-link" href="index.html#menu" data-lang="navMenu">المنيو</a>
-                                    </li>
-                                    <li class="nav-item p-2">
-                                        <a class="nav-link" href="index.html#offers" data-lang="navOffers">العروض</a>
-                                    </li>
-                                    <li class="nav-item p-2">
-                                        <a class="nav-link" href="about.html" data-lang="navAbout">حول المطعم</a>
-                                    </li>
-                                    <li class="nav-item active p-2">
-                                        <a class="nav-link" href="contactUs.html" data-lang="navContact">تواصل معنا</a>
-                                    </li>
-                                    <li class="nav-item p-2">
-                                        <a class="nav-link lang" href="#">English</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <ul class="navbar-nav ml-auto cart-list">
+        <section class="top-menu">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+                    <div class="container">
+                        <a class="navbar-brand" href="index.html" style="color: #fefefe;">
+                            <img src="images/logo-white-red.png" class="logo" alt="">
+                            <img src="images/logo-red.png" class="logo-transparent" style="display: none;" alt="">
+                            ARA<span style="color: #eb173d;">PIZZA</span></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
                                 <li class="nav-item p-2">
-                                    <div class="cart-container">
-                                        <a href="cart.html" class="nav-link cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </a>
-                                        <div class="cart-dropdown">
-                                            <div class="product">
-                                                <div class="product-name">
-                                                    <a class="delete-item custom-btn-with-icon"><i
-                                                            class="fa-solid fa-trash"></i></a>
-                                                    Nike Socks
-                                                </div>
-                                                <div class="product-price">$15.00</div>
-                                            </div>
-                                            <div class="product">
-                                                <div class="product-name">
-                                                    <a class="delete-item custom-btn-with-icon"><i
-                                                            class="fa-solid fa-trash"></i></a>
-                                                    Adidas Socks
-                                                </div>
-                                                <div class="product-price">$22.00</div>
-                                            </div>
-                                            <div class="product-total">
-                                                <div class="total-text">Total</div>
-                                                <div class="total">$37.00</div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <a class="nav-link" href="index.html" data-lang="navHome">الرئيسية</a>
+                                </li>
+                                <li class="nav-item p-2">
+                                    <a class="nav-link" href="index.html#menu" data-lang="navMenu">المنيو</a>
+                                </li>
+                                <li class="nav-item p-2">
+                                    <a class="nav-link" href="index.html#offers" data-lang="navOffers">العروض</a>
+                                </li>
+                                <li class="nav-item p-2">
+                                    <a class="nav-link" href="about.html" data-lang="navAbout">حول المطعم</a>
+                                </li>
+                                <li class="nav-item active p-2">
+                                    <a class="nav-link" href="contactUs.html" data-lang="navContact">تواصل معنا</a>
+                                </li>
+                                <li class="nav-item p-2">
+                                    <a class="nav-link lang" href="#">English</a>
                                 </li>
                             </ul>
                         </div>
-                    </nav>
-                </div>
-            </section>
-    </div>
-    </div>
+                        <ul class="navbar-nav ml-auto cart-list">
+                            <li class="nav-item p-2">
+                                <div class="cart-container">
+                                    <a href="cart.html" class="nav-link cart position-relative">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <span
+                                            class="counter position-absolute translate-middle p-1 bg-danger border border-light rounded-circle">
+                                            <span class="visually-hidden">New alerts</span>
+                                        </span>
+                                    </a>
+                                    <div class="cart-dropdown">
+                                        <div class="product-total">
+                                            <div class="total-text">Total:</div>
+                                            <div class="total-price"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
     <footer>
         <img class="footer-bg" src="images/pizza-footer-bg.png" alt="">
         <div class="container">

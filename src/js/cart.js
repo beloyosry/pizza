@@ -1,5 +1,4 @@
 const pizzaCards = document.querySelectorAll(".card");
-
 pizzaCards.forEach((card) => {
     const size = card.querySelectorAll("input[name='pizza-size']");
     const price = card.querySelector(".price");
@@ -27,6 +26,60 @@ pizzaCards.forEach((card) => {
         });
     });
 });
+
+const toastQuestion = `
+<div class="toast toast-question" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body">
+            Are you sure you want to delete this item?
+            <div class="mt-2 pt-2 border-top">
+                <button type="button" class="btn btn-primary btn-sm confirm-btn">Delete</button>
+                <button type="button" class="btn btn-secondary btn-sm cancel-btn" data-bs-dismiss="toast">Close</button>
+            </div>
+        </div>
+    </div>
+`;
+
+const toastRegularDeleted = `
+<div class="toast toast-regular-deleted align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Item Deleted!
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+`;
+
+const toastRegularCancel = `
+<div class="toast toast-regular-cancel align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Nothing Changed!
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+`;
+
+const toastRegularAdded = `
+<div class="toast toast-regular-added align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Item Added
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+`;
+
+function toastMsg(toastType) {
+    var toast = document.createElement("div");
+    toast.innerHTML = toastType;
+    document.body.prepend(toast);
+    setTimeout(() => {
+        toast.remove();
+    }, 2500);
+}
 
 $(function () {
     // Load the cart data from sessionStorage
@@ -57,6 +110,7 @@ $(function () {
                 );
                 return;
             }
+            toastMsg(toastRegularAdded);
             $(".toast-regular-added").toast("show");
             setTimeout(() => {
                 $(".toast-regular-added").toast("hide");
@@ -87,6 +141,7 @@ $(function () {
 
     // Add event listener to delete items from the cart using event delegation
     $(document).on("click", ".delete-item", function () {
+        toastMsg(toastQuestion);
         $(".toast-question").toast("show");
     });
 
@@ -96,14 +151,16 @@ $(function () {
         sessionStorage.setItem("cart", JSON.stringify(cart));
         updateCartDropdown();
         $(".toast-question").toast("hide");
+        toastMsg(toastRegularDeleted);
         $(".toast-regular-deleted").toast("show");
         setTimeout(() => {
             $(".toast-regular-deleted").toast("hide");
         }, 2000);
     });
 
-    $(".cancel-btn").on("click", function () {
+    $(document).on("click", ".cancel-btn", function () {
         $(".toast-question").toast("hide");
+        toastMsg(toastRegularCancel);
         $(".toast-regular-cancel").toast("show");
         setTimeout(() => {
             $(".toast-regular-cancel").toast("hide");
@@ -121,11 +178,11 @@ $(function () {
             productElement.classList.add("product");
             productElement.innerHTML = `
                 <div class="product-name">
-                  <a class="delete-item custom-btn-with-icon"><i class="fa-solid fa-trash"></i></a>
-                  ${product.name} - ${product.size} - ${product.type}
+                    <a class="delete-item custom-btn-with-icon"><i class="fa-solid fa-trash"></i></a>
+                    ${product.name} - ${product.size} - ${product.type}
                 </div>
                 <div class="product-price">${product.price}</div>
-              `;
+            `;
             // Set the data-index attribute to the current index
             productElement.setAttribute("data-index", index);
             cartDropdown.append(productElement);

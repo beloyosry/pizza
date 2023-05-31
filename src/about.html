@@ -16,54 +16,6 @@
             <img id="splash-screen-logo" src="images/Loading/pre-angular-loader.gif" alt="Logo">
         </div>
     </div>
-    <div class="chatbox-wrapper">
-        <div class="chatbox-toggle">
-            <i class='bx bx-message-dots'></i>
-        </div>
-        <div class="chatbox-message-wrapper">
-            <div class="chatbox-message-header">
-                <div class="chatbox-message-profile">
-                    <img src="images/logo-red.png" alt="" class="chatbox-message-image">
-                    <div>
-                        <h4 class="chatbox-message-name">ARAPIZZA BOT</h4>
-                        <p class="chatbox-message-status">online</p>
-                    </div>
-                </div>
-                <div class="chatbox-message-dropdown">
-                    <i class='bx bx-dots-vertical-rounded chatbox-message-dropdown-toggle'></i>
-                    <ul class="chatbox-message-dropdown-menu">
-                        <li>
-                            <a href="#">Search</a>
-                        </li>
-                        <li>
-                            <a href="#">Report</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="chatbox-message-content">
-                <h4 class="chatbox-message-no-message" data-lang="chatBox">سعداء لتواصلكم معنا!</h4>
-                <!-- <div class="chatbox-message-item sent">
-					<span class="chatbox-message-item-text">
-						Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Quod, fugiat?
-					</span>
-					<span class="chatbox-message-item-time">08:30</span>
-				</div>
-				<div class="chatbox-message-item received">
-					<span class="chatbox-message-item-text">
-						Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Quod, fugiat?
-					</span>
-					<span class="chatbox-message-item-time">08:30</span>
-				</div> -->
-            </div>
-            <div class="chatbox-message-bottom">
-                <form action="#" class="chatbox-message-form">
-                    <textarea rows="1" placeholder="Type message..." class="chatbox-message-input"></textarea>
-                    <button type="submit" class="chatbox-message-submit"><i class='bx bx-send'></i></button>
-                </form>
-            </div>
-        </div>
-    </div>
     <div class="container-fluid">
         <section class="top-menu">
             <div class="row">
@@ -100,6 +52,25 @@
                                 </li>
                             </ul>
                         </div>
+                        <ul class="navbar-nav ml-auto cart-list">
+                            <li class="nav-item p-2">
+                                <div class="cart-container">
+                                    <a href="cart.html" class="nav-link cart position-relative">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <span
+                                            class="counter position-absolute translate-middle p-1 bg-danger border border-light rounded-circle">
+                                            <span class="visually-hidden">New alerts</span>
+                                        </span>
+                                    </a>
+                                    <div class="cart-dropdown">
+                                        <div class="product-total">
+                                            <div class="total-text">Total:</div>
+                                            <div class="total-price"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
             </div>
