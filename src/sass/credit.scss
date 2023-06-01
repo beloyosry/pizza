@@ -1,0 +1,314 @@
+@import "variable";
+
+.cart-page {
+    padding-top: 100px;
+    .bg-pattern {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        background: linear-gradient(
+                rgb(10 10 10),
+                rgb(145 125 125 / 0%),
+                rgb(243 1 1 / 0%),
+                rgb(0 0 0)
+            ),
+            url(../images/pattern.svg);
+        background-position: center;
+        filter: blur(0.15rem);
+    }
+
+    .credit {
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            padding: 40px 20px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Card General Styles */
+        .card {
+            width: 100%;
+            max-width: 550px;
+            position: relative;
+            color: $custom-color;
+            transition: 0.3s ease all;
+            transform: rotateY(0deg);
+            transform-style: preserve-3d;
+            cursor: pointer;
+            z-index: 2;
+            border-radius: 1.5rem;
+            --bs-card-bg: none;
+
+            &.active {
+                transform: rotateY(180deg);
+            }
+            & > div {
+                padding: 30px;
+                border-radius: 15px;
+                min-height: 315px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                box-shadow: 0 10px 10px 10px rgba(0, 60, 134, 0.3);
+            }
+
+            /* Front Card */
+            .front {
+                width: 100%;
+                background: linear-gradient(
+                    to bottom right,
+                    rgb(255 255 255 / 0%),
+                    rgb(235 23 61 / 62%)
+                );
+                box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5), -1px -1px 2px #aaa,
+                    1px 1px 2px #555;
+                backdrop-filter: blur(0.25rem);
+                -webkit-backdrop-filter: blur(0.65rem);
+
+                .brand-logo {
+                    text-align: right;
+                    min-height: 50px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        max-width: 80px;
+                    }
+                }
+                .chip {
+                    width: 100%;
+                    max-width: 50px;
+                    margin-bottom: 20px;
+                }
+                .group {
+                    .label {
+                        font-size: 16px;
+                        color: $grey-color;
+                        -webkit-text-stroke: 0.15px #000;
+                        margin-bottom: 5px;
+                    }
+                    .number,
+                    .name,
+                    .expiration {
+                        color: #c8c8c8;
+                        font-size: 22px;
+                        text-transform: uppercase;
+                    }
+                }
+                .flexbox {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                }
+            }
+
+            /* ---------- Back Card ----------*/
+            .back {
+                height: 100%;
+                background: linear-gradient(
+                    to bottom right,
+                    rgba(255, 255, 255, 0.2),
+                    rgba(255, 255, 255, 0.05)
+                );
+                box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5), -1px -1px 2px #aaa,
+                    1px 1px 2px #555;
+                backdrop-filter: blur(0.8rem);
+                -webkit-backdrop-filter: blur(0.8rem);
+
+                position: absolute;
+                top: 0;
+                transform: rotateY(180deg);
+                backface-visibility: hidden;
+
+                .magnetic-bar {
+                    height: 40px;
+                    background: #000;
+                    width: 100%;
+                    position: absolute;
+                    top: 30px;
+                    left: 0;
+                }
+                .details {
+                    margin-top: 60px;
+                    display: flex;
+                    justify-content: space-between;
+                    p {
+                        margin-bottom: 5px;
+                    }
+                    #signature {
+                        width: 70%;
+                        color: #000;
+                        .signature {
+                            height: 40px;
+                            background: repeating-linear-gradient(
+                                skyblue 0,
+                                skyblue 5px,
+                                orange 5px,
+                                orange 10px
+                            );
+                            p {
+                                line-height: 40px;
+                                font-family: "Liu Jian Mao Cao", cursive;
+                                color: #000;
+                                font-size: 30px;
+                                padding: 0 10px;
+                                text-transform: capitalize;
+                            }
+                        }
+                    }
+                    #ccv {
+                        width: 20%;
+                        color: #000;
+                        .ccv {
+                            background: #fff;
+                            height: 40px;
+                            color: #000;
+                            padding: 10px;
+                            text-align: center;
+                        }
+                    }
+                }
+                .legend {
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: black;
+                }
+                .bank-link {
+                    font-size: 14px;
+                    color: #000;
+                }
+            }
+        }
+
+        /* ---------- Contenedor Boton ----------*/
+        .container-btn {
+            .btn-open-form {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                line-height: 20px;
+                background: $main-color;
+                color: #fff;
+                position: relative;
+                top: -25px;
+                right: 40%;
+                z-index: 3;
+                border-radius: 100%;
+                box-shadow: -5px 4px 8px rgb(234 20 66 / 40%);
+                padding: 5px;
+                transition: all 0.2s ease;
+                border: none;
+                cursor: pointer;
+                &:hover {
+                    background: #f74169;
+                }
+                &.active {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        /* ---------- Card Form ----------*/
+        .card-form {
+            background: rgb(255 255 255 / 18%);
+            width: 100%;
+            max-width: 700px;
+            padding: 150px 30px 30px 30px;
+            border-radius: 10px;
+            position: relative;
+            top: -150px;
+            z-index: 1;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            transition: clip-path 0.3s ease-out;
+            &.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            label {
+                display: block;
+                color: $custom-color;
+                -webkit-text-stroke: 0.1px #6e7881;
+                margin-bottom: 5px;
+                font-size: 16px;
+            }
+            input,
+            select,
+            .btn-submit {
+                border: 2px solid #ced6e0;
+                font-size: 18px;
+                height: 50px;
+                width: 100%;
+                padding: 5px 12px;
+                transition: 0.3s ease all;
+                border-radius: 5px;
+            }
+            input:hover,
+            select:hover {
+                border: 2px solid $main-color;
+            }
+            input:focus,
+            select:focus {
+                outline: rgb(4, 4, 4);
+                box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3);
+            }
+            input {
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                background-color: rgb(255 255 255 / 0%);
+                color: $custom-color;
+            }
+            .flexbox {
+                display: flex;
+                justify-content: space-between;
+            }
+            .expire {
+                width: 100%;
+            }
+            .ccv {
+                min-width: 100px;
+            }
+            .group-select {
+                width: 100%;
+                margin-right: 15px;
+                position: relative;
+            }
+            select {
+                -webkit-appearance: none;
+                background-color: rgb(255 255 255 / 30%);
+            }
+            .group-select {
+                i {
+                    position: absolute;
+                    color: #ced6e0;
+                    top: 18px;
+                    right: 15px;
+                    transition: 0.3s ease all;
+                    &:hover i {
+                        color: #93bfed;
+                    }
+                }
+            }
+            .btn-submit {
+                border: none;
+                padding: 10px;
+                font-size: 22px;
+                color: #fff;
+                background: $main-color;
+                box-shadow: 2px 2px 10px 0px rgb(234 20 66 / 86%);
+                cursor: pointer;
+                &:hover {
+                    background: rgb(235 23 61 / 47%);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1399px) {
+    .btn-open-form {
+        right: 45% !important;
+    }
+}
