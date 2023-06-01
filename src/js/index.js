@@ -11,38 +11,43 @@ import { currentLang } from "./lang";
 import AOS from "aos";
 import { event } from "jquery";
 import "./cart";
+import "./pizzaOfferComponent";
 
 AOS.init();
+if (document.getElementById("date")) {
+    document.getElementById("date").innerHTML = new Date().getFullYear();
+}
 
-document.getElementById("date").innerHTML = new Date().getFullYear();
-
+var navbar = document.getElementById("navbar");
 var navbarBrand = document.querySelector(".navbar-brand");
 var logo = document.querySelector(".logo");
 var logoTransparent = document.querySelector(".logo-transparent");
 var cartList = document.querySelector(".cart");
 
-function scrollFunction() {
-    if (document.documentElement.scrollTop > 200) {
-        document.getElementById("navbar").classList.add("noTransparent");
-        navbarBrand.style.color = "#1f1f1f";
-        logo.style.display = "none";
-        logoTransparent.style.display = "initial";
-        if (cartList) {
-            cartList.style.color = "#eb173d";
-        }
-    } else {
-        document.getElementById("navbar").classList.remove("noTransparent");
-        navbarBrand.style.color = "#fefefe";
-        logo.style.display = "initial";
-        logoTransparent.style.display = "none";
-        if (cartList) {
-            cartList.style.color = "#fefefe";
+if (navbar) {
+    function scrollFunction() {
+        if (document.documentElement.scrollTop > 200) {
+            navbar.classList.add("noTransparent");
+            navbarBrand.style.color = "#1f1f1f";
+            logo.style.display = "none";
+            logoTransparent.style.display = "initial";
+            if (cartList) {
+                cartList.style.color = "#eb173d";
+            }
+        } else {
+            navbar.classList.remove("noTransparent");
+            navbarBrand.style.color = "#fefefe";
+            logo.style.display = "initial";
+            logoTransparent.style.display = "none";
+            if (cartList) {
+                cartList.style.color = "#fefefe";
+            }
         }
     }
+    window.onscroll = function () {
+        scrollFunction();
+    };
 }
-window.onscroll = function () {
-    scrollFunction();
-};
 
 window.addEventListener("load", (event) => {
     document.querySelector(".chatbox-wrapper").style.display = "none";

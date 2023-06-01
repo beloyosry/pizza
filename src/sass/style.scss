@@ -105,6 +105,23 @@ input {
     color: $custom-color !important;
 }
 
+.bg-pattern {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(
+            rgb(10 10 10),
+            rgb(145 125 125 / 0%),
+            rgb(243 1 1 / 0%),
+            rgb(0 0 0)
+        ),
+        url(../images/pattern.svg);
+    background-position: center;
+    filter: blur(0.15rem);
+    z-index: -1;
+}
+
 .custom-btn {
     @include button-style($main-color, $custom-color);
     padding: 15px 40px;
@@ -230,10 +247,14 @@ nav {
     }
 
     .carousel {
-        .carousel-item {
+        &-inner{
+            filter: drop-shadow(2px 4px 6px black);
+        }
+        &-item {
             img {
                 height: 100vh;
                 object-fit: cover;
+                filter: brightness(0.72);
             }
 
             .overlay {
@@ -252,7 +273,7 @@ nav {
             }
         }
 
-        .carousel-indicators {
+        &-indicators {
             li {
                 width: 15px;
                 height: 15px;
@@ -269,7 +290,7 @@ nav {
             }
         }
 
-        .carousel-caption {
+        &-caption {
             h1 {
                 font-weight: bold;
                 color: $custom-color;
