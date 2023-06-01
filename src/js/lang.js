@@ -262,8 +262,9 @@ export const translations = {
     },
 };
 export var currentLang = "ar";
-$(window).on("load", function () {
-    const langSelector = document.querySelector(".lang");
+let langSelector;
+document.addEventListener("DOMContentLoaded", () => {
+    langSelector = document.querySelector(".lang");
     if (langSelector) {
         langSelector.addEventListener("click", (e) => {
             e.preventDefault();
@@ -280,191 +281,190 @@ $(window).on("load", function () {
             setLang(currentLang);
             localStorage.setItem("lang", currentLang);
         });
-        document.addEventListener("DOMContentLoaded", () => {
-            const language = localStorage.getItem("lang");
-            console.log(language);
-            setLang(language);
-        });
-        function changeLang(lang) {
-            document.documentElement.lang = lang;
-        }
-        const setLang = (lang) => {
-            currentLang = lang;
-            langSelector.textContent = lang === "en" ? "العربية" : "English";
-            const elements = document.querySelectorAll("[data-lang]");
-            elements.forEach((element) => {
-                const translationKey = element.getAttribute("data-lang");
-                element.innerHTML = translations[lang][translationKey];
-            });
-            document.dir = lang === "ar" ? "rtl" : "ltr";
-            changeLang(lang);
-            document.body.setAttribute("dir", document.dir);
-            $(document).ready(function () {
-                if (document.body.getAttribute("dir") === "ltr") {
-                    $("#form-product-selection").on("submit", function () {
-                        alert("Added To Cart");
-                    });
-                    // $(".add-to-cart-btn").on("click", function () {
-                    //     alert("Added To Cart");
-                    // });
-                    $(".card-body").css({ left: "5%" });
-                    $("input").css({ textAlign: "left" });
-                    $(".input-group").css({ direction: "rtl" });
-                    // $(".box-dir").css({ direction: "rtl" });
-                    // $("section.license ul.timeline li .timebox::after ").css({
-                    //     borderRight: "2px solid #f4f4f5",
-                    //     borderTop: "2px solid #f4f4f5",
-                    //     right: "-10px",
-                    // });
-                    // $("section.license ul.timeline li .timebox h4 span ").css({
-                    //     marginRight: "25px",
-                    //     marginLeft: "0",
-                    // });
-                    // $(".carousel-caption").css({ left: "0" });
-                    // $(".carousel-caption .rounded-circle").css({
-                    //     transform: " translate(-50%, -50%)",
-                    // });
-                    // $("section.contacts .overlay .contact-info ul.contact-us li i").css(
-                    //     { marginRight: "5px" }
-                    // );
-                    // $(
-                    //     "section.contacts .overlay .contact-info .contact-form button"
-                    // ).css({ marginLeft: "15px", marginRight: "0px" });
-                    // $("input[data-lang='inputName']").attr("placeholder", "Name");
-                    // $("input[data-lang='email']").attr("placeholder", "Email");
-                    // $("textarea[data-lang='message']").attr("placeholder", "Message");
-                    // $(
-                    //     "section.contacts .overlay .contact-info .contact-form input, section.contacts .overlay .contact-info .contact-form textarea"
-                    // ).css({ textAlign: "left" });
-                } else if (document.body.getAttribute("dir") === "rtl") {
-                    $("#form-product-selection").on("submit", function () {
-                        alert("أضيف المُنتج إلى عربة الشراء");
-                    });
-                    // $(".add-to-cart-btn").on("click", function () {
-                    //     alert("أضيف المُنتج إلى عربة الشراء");
-                    // });
-                    $(".card-body").css({ left: "-5%" });
-                    $("input").css({ textAlign: "right" });
-                    $(".input-group").css({ direction: "rtl" });
-                    // $(".box-dir").css({ direction: "ltr" });
-                    // $("section.license ul.timeline li .timebox").after().css({
-                    //     borderLeft: "2px solid #f4f4f5",
-                    //     borderBottom: "2px solid #f4f4f5",
-                    //     left: "-10px",
-                    // });
-                    // $("section.license ul.timeline li .timebox h4 span ").css({
-                    //     marginRight: "0",
-                    //     marginLeft: "25px",
-                    // });
-                    // $(
-                    //     "section.license ul.timeline li:nth-child(even) .timebox h4 span "
-                    // ).css({
-                    //     marginRight: "25px",
-                    //     marginLeft: "0",
-                    // });
-                    // $(".carousel-caption").css({ left: "15%" });
-                    // $(".carousel-caption .rounded-circle").css({
-                    //     transform: " translate(50%, -50%)",
-                    // });
-                    // $("section.contacts .overlay .contact-info ul.contact-us li i").css(
-                    //     { marginLeft: "5px" }
-                    // );
-                    // $(
-                    //     "section.contacts .overlay .contact-info .contact-form button"
-                    // ).css({ marginLeft: "0px", marginRight: "15px" });
-                    // $("input[data-lang='inputName']").attr("placeholder", "الإسم");
-                    // $("input[data-lang='email']").attr(
-                    //     "placeholder",
-                    //     "البريد الإلكتروني"
-                    // );
-                    // $("textarea[data-lang='message']").attr(
-                    //     "placeholder",
-                    //     "نص الرسالة أو تفاصيل المشروع"
-                    // );
-                    // $(
-                    //     "section.contacts .overlay .contact-info .contact-form input, section.contacts .overlay .contact-info .contact-form textarea"
-                    // ).css({ textAlign: "right" });
-                }
-            });
-
-            // Update placeholders
-            var text = document.querySelector("input[type='text']");
-            var email = document.querySelectorAll("input[type='email']");
-            var textArea = document.querySelector(".message-textarea");
-            if (email != "undefined" && email != null) {
-                const emailInputs = document.querySelectorAll(
-                    "input[type='email']"
-                );
-                emailInputs.forEach((emailInput) => {
-                    emailInput.setAttribute(
-                        "placeholder",
-                        translations[lang].emailPlaceholder
-                    );
-                });
-                // Update text direction
-                const inputs = document.querySelectorAll("input, textarea");
-                inputs.forEach((input) => {
-                    input.style.setProperty(
-                        "--placeholder-dir",
-                        lang === "ar" ? "rtl" : "ltr"
-                    );
-                });
-            }
-            if (
-                text != "undefined" &&
-                text != null &&
-                email != "undefined" &&
-                email != null &&
-                textArea != "undefined" &&
-                textArea != null
-            ) {
-                const nameInput = document.querySelector("input[type='text']");
-                const emailInputs = document.querySelectorAll(
-                    "input[type='email']"
-                );
-                const messageTextarea =
-                    document.querySelector(".message-textarea");
-                nameInput.setAttribute(
-                    "placeholder",
-                    translations[lang].namePlaceholder
-                );
-                emailInputs.forEach((emailInput) => {
-                    emailInput.setAttribute(
-                        "placeholder",
-                        translations[lang].emailPlaceholder
-                    );
-                });
-                messageTextarea.setAttribute(
-                    "placeholder",
-                    translations[lang].messagePlaceholder
-                );
-                // Update text direction
-                const inputs = document.querySelectorAll("input, textarea");
-                inputs.forEach((input) => {
-                    input.style.setProperty(
-                        "--placeholder-dir",
-                        lang === "ar" ? "rtl" : "ltr"
-                    );
-                });
-            }
-            if ($("#branches").length > 0) {
-                createBranchesList();
-                // Update branch name and address
-                const activeItem = document.querySelector(
-                    ".location-item.active"
-                );
-                if (activeItem) {
-                    const branchKey = activeItem
-                        .querySelector(".location-link")
-                        .getAttribute("data-branch-key");
-                    const name = document.getElementById("branch-name");
-                    const address = document.getElementById("branch-address");
-                    name.innerHTML =
-                        translations.branchInfo[currentLang][branchKey].name;
-                    address.innerHTML =
-                        translations.branchInfo[currentLang][branchKey].address;
-                }
-            }
-        };
+        const language = localStorage.getItem("lang");
+        console.log(language);
+        setLang(language);
     }
 });
+
+const setLang = (lang) => {
+    currentLang = lang;
+    if (langSelector) {
+        langSelector.textContent = lang === "en" ? "العربية" : "English";
+        const elements = document.querySelectorAll("[data-lang]");
+        elements.forEach((element) => {
+            const translationKey = element.getAttribute("data-lang");
+            element.innerHTML = translations[lang][translationKey];
+        });
+        document.dir = lang === "ar" ? "rtl" : "ltr";
+        changeLang(lang);
+        document.body.setAttribute("dir", document.dir);
+        $(document).ready(function () {
+            if (document.body.getAttribute("dir") === "ltr") {
+                $("#form-product-selection").on("submit", function () {
+                    alert("Added To Cart");
+                });
+                // $(".add-to-cart-btn").on("click", function () {
+                //     alert("Added To Cart");
+                // });
+                $(".card-body").css({ left: "5%" });
+                $("input").css({ textAlign: "left" });
+                $(".input-group").css({ direction: "rtl" });
+                // $(".box-dir").css({ direction: "rtl" });
+                // $("section.license ul.timeline li .timebox::after ").css({
+                //     borderRight: "2px solid #f4f4f5",
+                //     borderTop: "2px solid #f4f4f5",
+                //     right: "-10px",
+                // });
+                // $("section.license ul.timeline li .timebox h4 span ").css({
+                //     marginRight: "25px",
+                //     marginLeft: "0",
+                // });
+                // $(".carousel-caption").css({ left: "0" });
+                // $(".carousel-caption .rounded-circle").css({
+                //     transform: " translate(-50%, -50%)",
+                // });
+                // $("section.contacts .overlay .contact-info ul.contact-us li i").css(
+                //     { marginRight: "5px" }
+                // );
+                // $(
+                //     "section.contacts .overlay .contact-info .contact-form button"
+                // ).css({ marginLeft: "15px", marginRight: "0px" });
+                // $("input[data-lang='inputName']").attr("placeholder", "Name");
+                // $("input[data-lang='email']").attr("placeholder", "Email");
+                // $("textarea[data-lang='message']").attr("placeholder", "Message");
+                // $(
+                //     "section.contacts .overlay .contact-info .contact-form input, section.contacts .overlay .contact-info .contact-form textarea"
+                // ).css({ textAlign: "left" });
+            } else if (document.body.getAttribute("dir") === "rtl") {
+                $("#form-product-selection").on("submit", function () {
+                    alert("أضيف المُنتج إلى عربة الشراء");
+                });
+                // $(".add-to-cart-btn").on("click", function () {
+                //     alert("أضيف المُنتج إلى عربة الشراء");
+                // });
+                $(".card-body").css({ left: "-5%" });
+                $("input").css({ textAlign: "right" });
+                $(".input-group").css({ direction: "rtl" });
+                // $(".box-dir").css({ direction: "ltr" });
+                // $("section.license ul.timeline li .timebox").after().css({
+                //     borderLeft: "2px solid #f4f4f5",
+                //     borderBottom: "2px solid #f4f4f5",
+                //     left: "-10px",
+                // });
+                // $("section.license ul.timeline li .timebox h4 span ").css({
+                //     marginRight: "0",
+                //     marginLeft: "25px",
+                // });
+                // $(
+                //     "section.license ul.timeline li:nth-child(even) .timebox h4 span "
+                // ).css({
+                //     marginRight: "25px",
+                //     marginLeft: "0",
+                // });
+                // $(".carousel-caption").css({ left: "15%" });
+                // $(".carousel-caption .rounded-circle").css({
+                //     transform: " translate(50%, -50%)",
+                // });
+                // $("section.contacts .overlay .contact-info ul.contact-us li i").css(
+                //     { marginLeft: "5px" }
+                // );
+                // $(
+                //     "section.contacts .overlay .contact-info .contact-form button"
+                // ).css({ marginLeft: "0px", marginRight: "15px" });
+                // $("input[data-lang='inputName']").attr("placeholder", "الإسم");
+                // $("input[data-lang='email']").attr(
+                //     "placeholder",
+                //     "البريد الإلكتروني"
+                // );
+                // $("textarea[data-lang='message']").attr(
+                //     "placeholder",
+                //     "نص الرسالة أو تفاصيل المشروع"
+                // );
+                // $(
+                //     "section.contacts .overlay .contact-info .contact-form input, section.contacts .overlay .contact-info .contact-form textarea"
+                // ).css({ textAlign: "right" });
+            }
+        });
+
+        // Update placeholders
+        var text = document.querySelector("input[type='text']");
+        var email = document.querySelectorAll("input[type='email']");
+        var textArea = document.querySelector(".message-textarea");
+        if (email != "undefined" && email != null) {
+            const emailInputs = document.querySelectorAll(
+                "input[type='email']"
+            );
+            emailInputs.forEach((emailInput) => {
+                emailInput.setAttribute(
+                    "placeholder",
+                    translations[lang].emailPlaceholder
+                );
+            });
+            // Update text direction
+            const inputs = document.querySelectorAll("input, textarea");
+            inputs.forEach((input) => {
+                input.style.setProperty(
+                    "--placeholder-dir",
+                    lang === "ar" ? "rtl" : "ltr"
+                );
+            });
+        }
+        if (
+            text != "undefined" &&
+            text != null &&
+            email != "undefined" &&
+            email != null &&
+            textArea != "undefined" &&
+            textArea != null
+        ) {
+            const nameInput = document.querySelector("input[type='text']");
+            const emailInputs = document.querySelectorAll(
+                "input[type='email']"
+            );
+            const messageTextarea = document.querySelector(".message-textarea");
+            nameInput.setAttribute(
+                "placeholder",
+                translations[lang].namePlaceholder
+            );
+            emailInputs.forEach((emailInput) => {
+                emailInput.setAttribute(
+                    "placeholder",
+                    translations[lang].emailPlaceholder
+                );
+            });
+            messageTextarea.setAttribute(
+                "placeholder",
+                translations[lang].messagePlaceholder
+            );
+            // Update text direction
+            const inputs = document.querySelectorAll("input, textarea");
+            inputs.forEach((input) => {
+                input.style.setProperty(
+                    "--placeholder-dir",
+                    lang === "ar" ? "rtl" : "ltr"
+                );
+            });
+        }
+        if ($("#branches").length > 0) {
+            createBranchesList();
+            // Update branch name and address
+            const activeItem = document.querySelector(".location-item.active");
+            if (activeItem) {
+                const branchKey = activeItem
+                    .querySelector(".location-link")
+                    .getAttribute("data-branch-key");
+                const name = document.getElementById("branch-name");
+                const address = document.getElementById("branch-address");
+                name.innerHTML =
+                    translations.branchInfo[currentLang][branchKey].name;
+                address.innerHTML =
+                    translations.branchInfo[currentLang][branchKey].address;
+            }
+        }
+    }
+};
+
+function changeLang(lang) {
+    document.documentElement.lang = lang;
+}
