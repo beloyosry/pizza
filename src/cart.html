@@ -80,26 +80,25 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="cart-list">
-                            <h2>Your Cart</h2>
-                            <ul>
-                                <li>
-                                    <span class="pizza-name">Margherita</span>
-                                    <span class="pizza-price">$10.99</span>
-                                </li>
-                                <li>
-                                    <span class="pizza-name">Pepperoni</span>
-                                    <span class="pizza-price">$12.99</span>
-                                </li>
-                                <li>
-                                    <span class="pizza-name">Hawaiian</span>
-                                    <span class="pizza-price">$11.99</span>
-                                </li>
-                            </ul>
-                            <div class="total">
-                                Total: <span class="total-price">$35.97</span>
+                        <div class=" cart-list">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Pizza</th>
+                                            <th scope="col">Size</th>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
                             </div>
-                            <button class="checkout-button">Checkout</button>
+                            <div class="d-flex justify-content-between">
+                                <div>Total:</div>
+                                <div class="total-price">$35.97</div>
+                            </div>
+                            <button id="checkout" type="button" class="btn custom-btn">Checkout</button>
                         </div>
                     </div>
                     <div class="col-md-6">

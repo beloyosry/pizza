@@ -1,8 +1,34 @@
 @import "variable";
 
 .cart-page {
-    padding-top: 100px;
-    
+    padding-top: 150px;
+
+    .cart-list {
+        color: $custom-color;
+        table {
+            th {
+                // set the background color of the table header cells
+                background-color: $main-color;
+                color: white;
+            }
+
+            td {
+                // set the text color of the table body cells
+                color: $custom-color;
+            }
+        }
+
+        // style the total price
+        .total-price {
+            // set the text color of the total price
+            color: $main-color;
+            font-weight: bold;
+        }
+        .custom-btn {
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
+    }
 
     .credit {
         .container {

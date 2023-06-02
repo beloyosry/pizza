@@ -177,6 +177,7 @@ if ($(".cart-list")) {
         function updateCartDropdown() {
             // Clear the cart dropdown
             $(".product").remove();
+            $(".cart-list tbody tr").remove();
 
             // Add each product in the cart to the cart dropdown
             cart.forEach(function (product, index) {
@@ -192,6 +193,14 @@ if ($(".cart-list")) {
                 // Set the data-index attribute to the current index
                 productElement.setAttribute("data-index", index);
                 cartDropdown.append(productElement);
+                var productRow = document.createElement("tr");
+                productRow.innerHTML = `
+            <td>${product.name}</td>
+            <td>${product.size}</td>
+            <td>${product.type}</td>
+            <td>${product.price}</td>
+        `;
+                $(".cart-list tbody").append(productRow);
             });
 
             // Update the total price
@@ -220,17 +229,17 @@ if ($(".cart-list")) {
 
             // Update the total price element with the calculated total price
             totalPriceElement.text("$" + totalPrice.toFixed(2));
+
+            // Update the total price in the cart table
+            $(".cart-list .total-price").text("$" + totalPrice.toFixed(2));
         }
 
         // Update the cart dropdown when the page loads
         updateCartDropdown();
+        var checkOut = null;
+
         if ($(".credit")) {
             $("#card-form").on("submit", function () {
-                var index = $(this).closest(".product").data("index");
-                cart.splice(index);
-                sessionStorage.setItem("cart", JSON.stringify(cart));
-                updateCartDropdown();
-
                 (() => {
                     "use strict";
 
@@ -246,8 +255,14 @@ if ($(".cart-list")) {
                                 if (!form.checkValidity()) {
                                     event.preventDefault();
                                     event.stopPropagation();
+                                    console.log(checkOut);
+                                } else {
+                                    form.classList.add("was-validated");
+                                    checkOut = 1;
+                                    console.log(checkOut);
+                                    alert("credit card added successfully");
+                                    event.preventDefault();
                                 }
-                                alert("Thank you for your purchase.");
                             },
                             false
                         );
@@ -255,6 +270,22 @@ if ($(".cart-list")) {
                 })();
             });
         }
+        $("#checkout").on("click", function (event) {
+            if (checkOut != null) {
+                var index = $(this).closest(".product").data("index");
+                cart.splice(index);
+                sessionStorage.setItem("cart", JSON.stringify(cart));
+                updateCartDropdown();
+                alert("Thank you for purchasing.");
+                console.log(checkOut);
+                checkOut = null;
+                location.reload();
+            } else {
+                alert("add a credit card first!");
+                event.preventDefault();
+                console.log(checkOut);
+            }
+        });
     });
 
     // Credit Card

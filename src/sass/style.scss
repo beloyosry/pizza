@@ -4,7 +4,7 @@
 @import "./pizza_3.scss";
 @import "./chatBox.scss";
 @import "./cart_icon.scss";
-@import "./credit.scss";
+@import "./cart-page.scss";
 @import "./variable";
 @import url("https://unpkg.com/aos@2.3.1/dist/aos.css");
 
@@ -133,6 +133,8 @@ input {
     &:focus {
         border-width: 1px !important;
         border-style: solid !important;
+        border-color: #eb173d !important;
+        font-weight: 100 !important;
     }
 }
 
