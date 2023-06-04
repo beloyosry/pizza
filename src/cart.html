@@ -53,7 +53,7 @@
                             </ul>
                         </div>
                         <ul class="navbar-nav ml-auto cart-list">
-                            <li class="nav-item p-2">
+                            <li class="nav-item p-2 cart-icon">
                                 <div class="cart-container">
                                     <a href="cart.html" class="nav-link cart position-relative">
                                         <i class="fa fa-shopping-cart"></i>
@@ -67,6 +67,17 @@
                                             <div class="total-text">Total:</div>
                                             <div class="total-price"></div>
                                         </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item p-2 credit-card-icon">
+                                <div class="credit-container">
+                                    <a href="#" class="nav-link cart credit position-relative">
+                                        <i class="fa-regular fa-credit-card" draggable="true"></i>
+                                    </a>
+                                    <div class="credit-dropdown">
+                                        <p>Check the card you want to pay with it and drag it , drop it in cart icon.
+                                        </p>
                                     </div>
                                 </div>
                             </li>
@@ -168,7 +179,8 @@
                                 <form action="" id="card-form" class="card-form needs-validation" novalidate>
                                     <div class="group">
                                         <label for="inputNumber">Card Number</label>
-                                        <input type="text" id="inputNumber" maxlength="19" autocomplete="off" required>
+                                        <input class="inputNumber" type="text" id="inputNumber" maxlength="19"
+                                            autocomplete="off" required>
                                         <div class="invalid-feedback">
                                             All fields are required!
                                         </div>
@@ -178,7 +190,8 @@
                                     </div>
                                     <div class="group">
                                         <label for="inputHolder">Card's Holder Name</label>
-                                        <input type="text" id="inputHolder" maxlength="19" autocomplete="off" required>
+                                        <input class="inputHolder" type="text" id="inputHolder" maxlength="19"
+                                            autocomplete="off" required>
                                         <div class="invalid-feedback">
                                             All fields are required!
                                         </div>

@@ -236,185 +236,300 @@ if ($(".cart-list")) {
 
         // Update the cart dropdown when the page loads
         updateCartDropdown();
-        var checkOut = null;
+        // Credit Card
+        const card = document.querySelector("#card"),
+            btnOpenForm = document.querySelector("#btn-open-form"),
+            form = document.querySelector("#card-form"),
+            cardNumber = document.querySelector("#card .number"),
+            cardName = document.querySelector("#card .name"),
+            brandLogo = document.querySelector("#brand-logo"),
+            signature = document.querySelector("#card .signature p"),
+            monthExpDate = document.querySelector("#card .month"),
+            yearExpDate = document.querySelector("#card .year");
+        ccv = document.querySelector("#card .ccv");
+        if (card) {
+            // * Flip the card to show the front and vice versa.
+            const flipCard = () => {
+                if (card.classList.contains("active")) {
+                    card.classList.remove("active");
+                }
+            };
 
-        if ($(".credit")) {
-            $("#card-form").on("submit", function () {
-                (() => {
-                    "use strict";
-
-                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                    const forms =
-                        document.querySelectorAll(".needs-validation");
-
-                    // Loop over them and prevent submission
-                    Array.from(forms).forEach((form) => {
-                        form.addEventListener(
-                            "submit",
-                            (event) => {
-                                if (!form.checkValidity()) {
-                                    event.preventDefault();
-                                    event.stopPropagation();
-                                    console.log(checkOut);
-                                } else {
-                                    form.classList.add("was-validated");
-                                    checkOut = 1;
-                                    console.log(checkOut);
-                                    alert("credit card added successfully");
-                                    event.preventDefault();
-                                }
-                            },
-                            false
-                        );
-                    });
-                })();
-            });
-        }
-        $("#checkout").on("click", function (event) {
-            if (checkOut != null) {
-                var index = $(this).closest(".product").data("index");
-                cart.splice(index);
-                sessionStorage.setItem("cart", JSON.stringify(cart));
-                updateCartDropdown();
-                alert("Thank you for purchasing.");
-                console.log(checkOut);
-                checkOut = null;
-                location.reload();
-            } else {
-                alert("add a credit card first!");
-                event.preventDefault();
-                console.log(checkOut);
-            }
-        });
-    });
-
-    // Credit Card
-    const card = document.querySelector("#card"),
-        btnOpenForm = document.querySelector("#btn-open-form"),
-        form = document.querySelector("#card-form"),
-        cardNumber = document.querySelector("#card .number"),
-        cardName = document.querySelector("#card .name"),
-        brandLogo = document.querySelector("#brand-logo"),
-        signature = document.querySelector("#card .signature p"),
-        monthExpDate = document.querySelector("#card .month"),
-        yearExpDate = document.querySelector("#card .year");
-    ccv = document.querySelector("#card .ccv");
-
-    if (card) {
-        // * Flip the card to show the front and vice versa.
-        const flipCard = () => {
-            if (card.classList.contains("active")) {
-                card.classList.remove("active");
-            }
-        };
-
-        // * Card rotation
-        card.addEventListener("click", () => {
-            card.classList.toggle("active");
-        });
-
-        // * Button to open the form
-        btnOpenForm.addEventListener("click", () => {
-            btnOpenForm.classList.toggle("active");
-            form.classList.toggle("active");
-        });
-
-        // * Select month dinamically.
-        for (let i = 1; i <= 12; i++) {
-            let option = document.createElement("option");
-            option.value = i;
-            option.innerText = i;
-            form.selectMonth.appendChild(option);
-        }
-
-        // * Select year dinamically.
-        const currentYear = new Date().getFullYear();
-        for (let i = currentYear; i <= currentYear + 8; i++) {
-            let option = document.createElement("option");
-            option.value = i;
-            option.innerText = i;
-            form.selectYear.appendChild(option);
-        }
-
-        form.inputNumber.addEventListener("keyup", (e) => {
-            let inputValue = e.target.value;
-
-            form.inputNumber.value = inputValue
-                // Reject Spaces
-                .replace(/\s/g, "")
-                // Reject letters
-                .replace(/\D/g, "")
-                // Place an space each four numbers
-                .replace(/([0-9]{4})/g, "$1 ")
-                // Delete the last space
-                .trim();
-
-            cardNumber.textContent = inputValue;
-
-            if (inputValue == "") {
-                cardNumber.textContent = "#### #### #### ####";
-
-                brandLogo.innerHTML = "";
-            }
-
-            if (inputValue[0] == 4) {
-                brandLogo.innerHTML = "";
-                const image = document.createElement("img");
-                image.src =
-                    "https://raw.githubusercontent.com/falconmasters/formulario-tarjeta-credito-3d/master/img/logos/visa.png";
-                brandLogo.appendChild(image);
-            } else if (inputValue[0] == 5) {
-                brandLogo.innerHTML = "";
-                const image = document.createElement("img");
-                image.src =
-                    "https://raw.githubusercontent.com/falconmasters/formulario-tarjeta-credito-3d/master/img/logos/mastercard.png";
-                brandLogo.appendChild(image);
-            }
-
-            // Card is flipped to the front to be shown to the user
-            flipCard();
-        });
-
-        // * Input Card Holder's Name
-        form.inputHolder.addEventListener("keyup", (e) => {
-            let inputValue = e.target.value;
-
-            form.inputHolder.value = inputValue.replace(/[0-9]/g, "");
-            cardName.textContent = inputValue;
-            signature.textContent = inputValue;
-
-            if (inputValue == "") {
-                cardName.textContent = "Jhon Doe";
-            }
-
-            flipCard();
-        });
-
-        // * Select Month
-        form.selectMonth.addEventListener("change", (e) => {
-            monthExpDate.textContent = e.target.value;
-            flipCard();
-        });
-
-        // * Select Year
-        form.selectYear.addEventListener("change", (e) => {
-            yearExpDate.textContent = e.target.value.slice(2);
-            flipCard();
-        });
-
-        // * CCV
-        form.inputCCV.addEventListener("keyup", () => {
-            if (!card.classList.contains("active")) {
+            // * Card rotation
+            card.addEventListener("click", () => {
                 card.classList.toggle("active");
+            });
+
+            // * Button to open the form
+            btnOpenForm.addEventListener("click", () => {
+                btnOpenForm.classList.toggle("active");
+                form.classList.toggle("active");
+            });
+
+            // * Select month dinamically.
+            for (let i = 1; i <= 12; i++) {
+                let option = document.createElement("option");
+                option.value = i;
+                option.innerText = i;
+                form.selectMonth.appendChild(option);
             }
 
-            form.inputCCV.value = form.inputCCV.value
-                // Reject Spaces
-                .replace(/\s/g, "")
-                // Reject letters
-                .replace(/\D/g, "");
+            // * Select year dinamically.
+            const currentYear = new Date().getFullYear();
+            for (let i = currentYear; i <= currentYear + 8; i++) {
+                let option = document.createElement("option");
+                option.value = i;
+                option.innerText = i;
+                form.selectYear.appendChild(option);
+            }
 
-            ccv.textContent = form.inputCCV.value;
-        });
-    }
+            form.inputNumber.addEventListener("keyup", (e) => {
+                let inputValue = e.target.value;
+
+                form.inputNumber.value = inputValue
+                    // Reject Spaces
+                    .replace(/\s/g, "")
+                    // Reject letters
+                    .replace(/\D/g, "")
+                    // Place an space each four numbers
+                    .replace(/([0-9]{4})/g, "$1 ")
+                    // Delete the last space
+                    .trim();
+
+                cardNumber.textContent = inputValue;
+
+                if (inputValue == "") {
+                    cardNumber.textContent = "#### #### #### ####";
+
+                    brandLogo.innerHTML = "";
+                }
+
+                if (inputValue[0] == 4) {
+                    brandLogo.innerHTML = "";
+                    const image = document.createElement("img");
+                    image.src =
+                        "https://raw.githubusercontent.com/falconmasters/formulario-tarjeta-credito-3d/master/img/logos/visa.png";
+                    brandLogo.appendChild(image);
+                } else if (inputValue[0] == 5) {
+                    brandLogo.innerHTML = "";
+                    const image = document.createElement("img");
+                    image.src =
+                        "https://raw.githubusercontent.com/falconmasters/formulario-tarjeta-credito-3d/master/img/logos/mastercard.png";
+                    brandLogo.appendChild(image);
+                }
+                localStorage.setItem("cardNumber", cardName);
+
+                // Card is flipped to the front to be shown to the user
+                flipCard();
+            });
+
+            // * Input Card Holder's Name
+            form.inputHolder.addEventListener("keyup", (e) => {
+                let inputValue = e.target.value;
+
+                form.inputHolder.value = inputValue.replace(/[0-9]/g, "");
+                cardName.textContent = inputValue;
+                signature.textContent = inputValue;
+
+                if (inputValue == "") {
+                    cardName.textContent = "Jhon Doe";
+                }
+                localStorage.setItem("cardName", cardName);
+                flipCard();
+            });
+
+            // * Select Month
+            form.selectMonth.addEventListener("change", (e) => {
+                monthExpDate.textContent = e.target.value;
+                flipCard();
+            });
+
+            // * Select Year
+            form.selectYear.addEventListener("change", (e) => {
+                yearExpDate.textContent = e.target.value.slice(2);
+                flipCard();
+            });
+
+            // * CCV
+            form.inputCCV.addEventListener("keyup", () => {
+                if (!card.classList.contains("active")) {
+                    card.classList.toggle("active");
+                }
+
+                form.inputCCV.value = form.inputCCV.value
+                    // Reject Spaces
+                    .replace(/\s/g, "")
+                    // Reject letters
+                    .replace(/\D/g, "");
+
+                ccv.textContent = form.inputCCV.value;
+            });
+            var checkOut = null;
+            console.log("Defining inputHolder");
+            const inputHolder = document.querySelector(
+                "#card-form .inputHolder"
+            );
+            console.log(inputHolder);
+            const inputNumber = document.querySelector(
+                "#card-form .inputNumber"
+            );
+            const creditCardList = document.querySelector(".credit-dropdown");
+            document.querySelector(".credit-card-icon").style.display = "none";
+
+            if ($(".credit")) {
+                // Display saved credit cards on page load
+                let creditCards =
+                    JSON.parse(localStorage.getItem("creditCards")) || [];
+                if (creditCards.length > 0) {
+                    document.querySelector(".credit-card-icon").style.display =
+                        "block";
+                } else {
+                    document.querySelector(".credit-card-icon").style.display =
+                        "none";
+                }
+                creditCards.forEach((card) => {
+                    // Generate unique id for radio input
+                    let radioId;
+                    do {
+                        radioId =
+                            card.cardholderName[0] +
+                            Math.floor(Math.random() * 100000);
+                    } while (document.querySelector(`input[id="${radioId}"]`));
+
+                    const listItem = document.createElement("div");
+                    listItem.classList.add("credit-card");
+                    listItem.innerHTML = `
+                        <li>
+                            <input type="radio" name="creditCard" id="${radioId}">
+                            ${card.cardholderName} **** **** **** ${card.lastFourDigits}
+                        </li>
+                    `;
+                    creditCardList.appendChild(listItem);
+                });
+
+                $("#card-form").on("submit", function (e) {
+                    e.preventDefault();
+                    const cardholderName = inputHolder.value;
+                    const cardNumber = inputNumber.value;
+                    const lastFourDigits = cardNumber.slice(-4);
+                    const month = form.selectMonth.value;
+                    const year = form.selectYear.value;
+                    const ccv = form.inputCCV.value;
+
+                    // Check if all required fields have values
+                    if (cardholderName && cardNumber && month && year && ccv) {
+                        checkOut = 1;
+                        // Show credit card icon
+                        document.querySelector(
+                            ".credit-card-icon"
+                        ).style.display = "block";
+
+                        // Generate unique id for radio input
+                        let radioId;
+                        do {
+                            radioId =
+                                cardholderName[0] +
+                                Math.floor(Math.random() * 100000);
+                        } while (
+                            document.querySelector(`input[id="${radioId}"]`)
+                        );
+
+                        // Create new credit card item
+                        const listItem = document.createElement("div");
+                        listItem.classList.add("credit-card");
+                        listItem.innerHTML = `
+                            <li>
+                                <input type="radio" name="creditCard" id="${radioId}">
+                                ${cardholderName} **** **** **** ${lastFourDigits}
+                            </li>
+                        `;
+
+                        // Add new credit card item to credit dropdown
+                        creditCardList.appendChild(listItem);
+
+                        // Save credit card to local storage
+                        let creditCards =
+                            JSON.parse(localStorage.getItem("creditCards")) ||
+                            [];
+                        creditCards.push({ cardholderName, lastFourDigits });
+                        localStorage.setItem(
+                            "creditCards",
+                            JSON.stringify(creditCards)
+                        );
+
+                        // Show alert message
+                        alert("Credit card added successfully");
+                    }
+                });
+            }
+            $("#checkout").on("click", function (event) {
+                // Check if a credit card has been added or selected
+                let creditCards =
+                    JSON.parse(localStorage.getItem("creditCards")) || [];
+                let selectedCard = document.querySelector(
+                    ".credit-dropdown input[type='radio']:checked"
+                );
+                if (creditCards.length > 0 && selectedCard) {
+                    var index = $(this).closest(".product").data("index");
+                    cart.splice(index);
+                    sessionStorage.setItem("cart", JSON.stringify(cart));
+                    updateCartDropdown();
+                    alert("Thank you for purchasing.");
+                    console.log(checkOut);
+                    checkOut = null;
+                    location.reload();
+                } else {
+                    alert("Add or select a credit card first!");
+                    event.preventDefault();
+                    console.log(checkOut);
+                }
+            });
+
+            // Allow credit card icon to be dragged
+            document
+                .querySelector(".credit-card-icon")
+                .addEventListener("dragstart", function (event) {
+                    event.dataTransfer.setData("text/plain", "creditCard");
+                });
+
+            // Allow credit card icon to be dropped on cart icon
+            document
+                .querySelector(".cart-icon")
+                .addEventListener("dragover", function (event) {
+                    event.preventDefault();
+                });
+
+            // Handle credit card icon being dropped on cart icon
+            document
+                .querySelector(".cart-icon")
+                .addEventListener("drop", function (event) {
+                    event.preventDefault();
+                    let data = event.dataTransfer.getData("text/plain");
+                    if (data === "creditCard") {
+                        // Check if a credit card has been selected
+                        let selectedCard = document.querySelector(
+                            ".credit-dropdown input[type='radio']:checked"
+                        );
+                        if (selectedCard) {
+                            // Handle checkout
+                            var index = $(this)
+                                .closest(".product")
+                                .data("index");
+                            cart.splice(index);
+                            sessionStorage.setItem(
+                                "cart",
+                                JSON.stringify(cart)
+                            );
+                            updateCartDropdown();
+                            alert("Thank you for purchasing.");
+                            console.log(checkOut);
+                            checkOut = null;
+                            location.reload();
+                        } else {
+                            alert("Select a credit card first!");
+                        }
+                    }
+                });
+        }
+    });
 }
