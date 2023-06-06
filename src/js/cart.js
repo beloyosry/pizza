@@ -364,6 +364,7 @@ if ($(".cart-list")) {
 
                 ccv.textContent = form.inputCCV.value;
             });
+
             var checkOut = null;
             console.log("Defining inputHolder");
             const inputHolder = document.querySelector(
@@ -382,7 +383,7 @@ if ($(".cart-list")) {
                     JSON.parse(localStorage.getItem("creditCards")) || [];
                 if (creditCards.length > 0) {
                     document.querySelector(".credit-card-icon").style.display =
-                        "block";
+                        "flex";
                 } else {
                     document.querySelector(".credit-card-icon").style.display =
                         "none";
@@ -422,7 +423,7 @@ if ($(".cart-list")) {
                         // Show credit card icon
                         document.querySelector(
                             ".credit-card-icon"
-                        ).style.display = "block";
+                        ).style.display = "flex";
 
                         // Generate unique id for radio input
                         let radioId;
@@ -461,6 +462,134 @@ if ($(".cart-list")) {
                         alert("Credit card added successfully");
                     }
                 });
+
+                // Drag & Drop
+                var isDragging = false;
+                var previousX = 0;
+
+                // called after dropping animation is completed
+                function onDrop() {
+                    $(".cart").css({ color: "#eb173d" });
+                    let selectedCard = document.querySelector(
+                        ".credit-dropdown input[type='radio']:checked"
+                    );
+                    if (selectedCard) {
+                        // Handle checkout
+                        var index = $(this).closest(".product").data("index");
+                        cart.splice(index);
+                        sessionStorage.setItem("cart", JSON.stringify(cart));
+                        updateCartDropdown();
+                        alert("Thank you for purchasing.");
+                        console.log(checkOut);
+                        checkOut = null;
+                        window.setTimeout(function () {
+                            $(".cart").css({ color: "white" });
+                        }, 2500);
+                        location.reload();
+                    } else {
+                        alert("Select a credit card first!");
+                    }
+                }
+
+                // collision detection
+                // source : http://stackoverflow.com/questions/4230029/jquery-javascript-collision-detection
+                function isColliding(x, y, element2) {
+                    var e2 = {};
+                    e2.top = $(element2).offset().top;
+                    e2.left = $(element2).offset().left;
+                    e2.right =
+                        parseFloat($(element2).offset().left) +
+                        parseFloat($(element2).width());
+                    e2.bottom =
+                        parseFloat($(element2).offset().top) +
+                        parseFloat($(element2).height());
+
+                    if (
+                        x > e2.left &&
+                        x < e2.right &&
+                        y < e2.bottom &&
+                        y > e2.top
+                    ) {
+                        return true;
+                    }
+                }
+
+                $(".drag").on("mousedown", function (e) {
+                    var isDragging = true;
+                    var drag = $(this)
+                        .clone()
+                        .addClass("dragged")
+                        .appendTo(".wrapper");
+                    var dropZone = $(this).data("target");
+                    var originalPosX = $(this).offset().left;
+                    var originalPosY = $(this).offset().top;
+                    var startX = e.clientX - originalPosX;
+                    var startY = e.clientY - originalPosY;
+                    drag.css({
+                        left: e.clientX - startX,
+                        top: e.clientY - startY,
+                    });
+                    drag.css({
+                        "transform-origin":
+                            Math.round((startX / drag.outerWidth()) * 100) +
+                            "% " +
+                            Math.round((startY / drag.outerHeight()) * 100) +
+                            "%",
+                    });
+                    drag.addClass("beginDrag");
+                    $(window).on("mousemove", function (event) {
+                        if (isDragging) {
+                            drag.css({
+                                left: event.clientX - startX,
+                                top: event.clientY - startY,
+                            });
+                            if (
+                                isColliding(
+                                    event.clientX,
+                                    event.clientY,
+                                    ".drop"
+                                )
+                            ) {
+                                drag.removeClass("beginDrag");
+                                drag.addClass("readyDrop");
+                            } else {
+                                drag.removeClass("readyDrop");
+                            }
+                        }
+                    });
+                    $(window).on("mouseup", function (event) {
+                        if (isDragging) {
+                            $(window).off("mousemove");
+                            if (
+                                isColliding(
+                                    event.clientX,
+                                    event.clientY,
+                                    ".drop"
+                                )
+                            ) {
+                                drag.removeClass("readyDrop").addClass("bye");
+
+                                window.setTimeout(function () {
+                                    onDrop();
+                                    drag.remove();
+                                }, 400);
+                            } else {
+                                drag.animate(
+                                    {
+                                        top: originalPosY,
+                                        left: originalPosX,
+                                        opacity: 0,
+                                    },
+                                    400,
+                                    function () {
+                                        drag.remove();
+                                    }
+                                );
+                            }
+                            isDragging = false;
+                        }
+                    });
+                });
             }
             $("#checkout").on("click", function (event) {
                 // Check if a credit card has been added or selected
@@ -484,52 +613,6 @@ if ($(".cart-list")) {
                     console.log(checkOut);
                 }
             });
-
-            // Allow credit card icon to be dragged
-            document
-                .querySelector(".credit-card-icon")
-                .addEventListener("dragstart", function (event) {
-                    event.dataTransfer.setData("text/plain", "creditCard");
-                });
-
-            // Allow credit card icon to be dropped on cart icon
-            document
-                .querySelector(".cart-icon")
-                .addEventListener("dragover", function (event) {
-                    event.preventDefault();
-                });
-
-            // Handle credit card icon being dropped on cart icon
-            document
-                .querySelector(".cart-icon")
-                .addEventListener("drop", function (event) {
-                    event.preventDefault();
-                    let data = event.dataTransfer.getData("text/plain");
-                    if (data === "creditCard") {
-                        // Check if a credit card has been selected
-                        let selectedCard = document.querySelector(
-                            ".credit-dropdown input[type='radio']:checked"
-                        );
-                        if (selectedCard) {
-                            // Handle checkout
-                            var index = $(this)
-                                .closest(".product")
-                                .data("index");
-                            cart.splice(index);
-                            sessionStorage.setItem(
-                                "cart",
-                                JSON.stringify(cart)
-                            );
-                            updateCartDropdown();
-                            alert("Thank you for purchasing.");
-                            console.log(checkOut);
-                            checkOut = null;
-                            location.reload();
-                        } else {
-                            alert("Select a credit card first!");
-                        }
-                    }
-                });
         }
     });
 }

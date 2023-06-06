@@ -1,0 +1,79 @@
+@keyframes bye {
+    0% {
+        transform: scale(1) rotate(-1deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(-2deg);
+    }
+    100% {
+        transform: scale(0) rotate(3deg);
+    }
+}
+
+@keyframes begindrag {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(-8deg);
+    }
+    30% {
+        transform: rotate(6deg);
+    }
+    55% {
+        transform: rotate(-3deg);
+    }
+    80% {
+        transform: rotate(1deg);
+    }
+    100% {
+        transform: rotate(-1deg);
+    }
+}
+
+.wrapper {
+    user-select: none;
+}
+
+.drop {
+    position: relative;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex !important;
+    align-items: center;
+    border-radius: 15px;
+    transition: background 0.4s ease;
+}
+.drag {
+    position: relative;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    background: transparent;
+    border-radius: 15px;
+    cursor: move;
+    z-index: 9999;
+    transition: opacity 0.3s ease, transform 0.6s ease;
+}
+
+.beginDrag {
+    animation: begindrag 0.8s ease forwards;
+}
+.dragged {
+    position: absolute;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+    transform: rotate(-1deg);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+.readyDrop {
+    opacity: 0.8 !important;
+    transition: opacity 0.3s ease;
+}
+.bye {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    animation: bye 0.4s ease forwards;
+}

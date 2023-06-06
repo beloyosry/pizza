@@ -1,8 +1,10 @@
 @import "variable";
-
+.cart-list {
+    flex-direction: row;
+}
 .cart-container,
 .credit-container {
-    width: 200px;
+    width: auto;
     min-height: 45px;
     float: left;
     position: relative;
@@ -28,12 +30,15 @@
     .credit-dropdown {
         background-color: $dark-grey-color;
         color: white;
+        text-align: center;
         display: none;
         width: 300px;
         min-height: 100px;
         position: absolute;
-        left: 0;
+        top: 50px;
+        left: -130px;
         margin-top: 0;
+        margin-left: 20px;
         border: 1px solid #455a64;
         z-index: 9999;
 
@@ -106,14 +111,9 @@ button {
 }
 .credit-card-icon {
     .credit {
-        color: $main-color;
+        color: $custom-color;
         font-size: 20px;
-        cursor: grab;
-        transition: all 0.5s ease;
-        &:active {
-            opacity: 0.8;
-            cursor: grabbing;
-        }
+        user-select: none;
 
         &-container {
             display: flex;
@@ -121,20 +121,25 @@ button {
             justify-content: center;
 
             .credit-dropdown {
-                top: 50px;
-                width: 200px;
-                text-align: center;
-
                 & > p {
                     font-size: 12px;
                     border-bottom: 1px solid gray;
                     margin: 0;
                     padding-bottom: 10px;
+                    padding-top: 10px;
                 }
-                .credit-card{
+                .credit-card {
                     justify-content: center !important;
                 }
             }
         }
+    }
+}
+
+@media (max-width: 1023px) {
+    .cart-dropdown,
+    .credit-dropdown {
+        width: 200px !important;
+        left: -100px !important;
     }
 }

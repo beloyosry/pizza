@@ -52,10 +52,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <ul class="navbar-nav ml-auto cart-list">
-                            <li class="nav-item p-2 cart-icon">
+                        <ul class="navbar-nav ml-auto cart-list wrapper">
+                            <li class="nav-item p-2 cart-icon drop">
                                 <div class="cart-container">
-                                    <a href="cart.html" class="nav-link cart position-relative">
+                                    <a href="#" class="nav-link cart position-relative">
                                         <i class="fa fa-shopping-cart"></i>
                                         <span
                                             class="counter position-absolute translate-middle p-1 bg-danger border border-light rounded-circle">
@@ -69,11 +69,12 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="debug"></div>
                             </li>
-                            <li class="nav-item p-2 credit-card-icon">
+                            <li class="nav-item p-2 credit-card-icon drag" data-target=".drop">
                                 <div class="credit-container">
-                                    <a href="#" class="nav-link cart credit position-relative">
-                                        <i class="fa-regular fa-credit-card" draggable="true"></i>
+                                    <a href="#" class="nav-link credit position-relative">
+                                        <i class="fa-regular fa-credit-card"></i>
                                     </a>
                                     <div class="credit-dropdown">
                                         <p>Check the card you want to pay with it and drag it , drop it in cart icon.

@@ -23,6 +23,7 @@ var navbarBrand = document.querySelector(".navbar-brand");
 var logo = document.querySelector(".logo");
 var logoTransparent = document.querySelector(".logo-transparent");
 var cartList = document.querySelector(".cart");
+var credit = document.querySelector(".credit");
 
 if (navbar) {
     function scrollFunction() {
@@ -31,16 +32,18 @@ if (navbar) {
             navbarBrand.style.color = "#1f1f1f";
             logo.style.display = "none";
             logoTransparent.style.display = "initial";
-            if (cartList) {
-                cartList.style.color = "#eb173d";
+            cartList.style.color = "#eb173d";
+            if (credit) {
+                credit.style.color = "#eb173d";
             }
         } else {
             navbar.classList.remove("noTransparent");
             navbarBrand.style.color = "#fefefe";
             logo.style.display = "initial";
             logoTransparent.style.display = "none";
-            if (cartList) {
-                cartList.style.color = "#fefefe";
+            cartList.style.color = "#fefefe";
+            if (credit) {
+                credit.style.color = "#fefefe";
             }
         }
     }
