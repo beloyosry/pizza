@@ -117,7 +117,7 @@ input {
             rgb(243 1 1 / 0%),
             rgb(0 0 0)
         ),
-        url(../images/pattern.svg);
+        url(https://svgshare.com/i/tzj.svg);
     background-position: center;
     filter: blur(0.15rem);
     z-index: -1;
@@ -250,7 +250,7 @@ nav {
     }
 
     .carousel {
-        &-inner{
+        &-inner {
             filter: drop-shadow(2px 4px 6px black);
         }
         &-item {
@@ -559,7 +559,7 @@ footer {
                     top: 50% !important;
                     width: fit-content !important;
                     height: fit-content !important;
-                    svg {
+                    i {
                         padding: 10px 20px;
                         background-color: $main-color;
                         border-radius: 50%;

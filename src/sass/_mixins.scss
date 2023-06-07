@@ -252,7 +252,7 @@
         }
 
         .rating {
-            svg {
+            i {
                 color: $grey-color;
                 &.active {
                     color: $main-color;
@@ -342,7 +342,7 @@
             .social-links {
                 ul {
                     li {
-                        svg {
+                        i {
                             color: $custom-color;
                             font-size: 20px;
                             margin: 0 10px;
@@ -424,13 +424,13 @@
                 button {
                     border-radius: 0;
 
-                    svg {
+                    i {
                         color: $custom-color;
                         transition: all 0.3s ease;
                     }
                     &:hover {
                         background-color: transparent !important;
-                        svg {
+                        i {
                             color: $main-color;
                         }
                     }
