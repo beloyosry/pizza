@@ -1,6 +1,9 @@
 import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
-import "jquery";
+import "webpack-jquery-ui";
+import "webpack-jquery-ui/css";
+import "jquery/dist/jquery.slim.min.js";
+import "jquery/dist/jquery.min";
 import "popper.js";
 import "../sass/style.scss";
 import "/src/js/chatBox";
@@ -11,6 +14,7 @@ import AOS from "aos";
 import { event } from "jquery";
 import "./cart";
 import "./pizzaOfferComponent";
+import "jquery-ui-touch-punch/jquery.ui.touch-punch.min.js";
 
 AOS.init();
 if (document.getElementById("date")) {
@@ -172,31 +176,6 @@ $(function () {
     $('.product-option input[type="radio"]').on("change", function () {
         $(this).parents(".product-option").siblings().removeClass("active");
         $(this).parents(".product-option").addClass("active");
-    });
-
-    // price calculations
-
-    var radio = $("input[name='size']");
-    var price = parseInt($("[data-product-price]").text());
-    $("#total-price").text(`${price}$`);
-    radio.on("change", function () {
-        var size = $(this).val();
-        var newPrice;
-        if (size == "sm") {
-            newPrice = price;
-        } else if (size == "m") {
-            newPrice = price + 20;
-        } else if (size == "l") {
-            newPrice = price + 50;
-        }
-        $("[data-product-price]").text(`${newPrice}$`);
-        $("#total-price").text(`${newPrice}$`);
-
-        $("#quantity").on("change", function () {
-            var quantity = $(this).val();
-            var total = quantity * parseInt(newPrice);
-            $("#total-price").text(`${total}$`);
-        });
     });
 });
 

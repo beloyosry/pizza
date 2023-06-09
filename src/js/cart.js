@@ -514,81 +514,52 @@ if ($(".cart-list")) {
                     }
                 }
 
-                $(".drag").on("mousedown", function (e) {
-                    var isDragging = true;
-                    var drag = $(this)
-                        .clone()
-                        .addClass("dragged")
-                        .appendTo(".wrapper");
-                    var dropZone = $(this).data("target");
-                    var originalPosX = $(this).offset().left;
-                    var originalPosY = $(this).offset().top;
-                    var startX = e.clientX - originalPosX;
-                    var startY = e.clientY - originalPosY;
-                    drag.css({
-                        left: e.clientX - startX,
-                        top: e.clientY - startY,
-                    });
-                    drag.css({
-                        "transform-origin":
-                            Math.round((startX / drag.outerWidth()) * 100) +
-                            "% " +
-                            Math.round((startY / drag.outerHeight()) * 100) +
-                            "%",
-                    });
-                    drag.addClass("beginDrag");
-                    $(window).on("mousemove", function (event) {
-                        if (isDragging) {
-                            drag.css({
-                                left: event.clientX - startX,
-                                top: event.clientY - startY,
-                            });
-                            if (
-                                isColliding(
-                                    event.clientX,
-                                    event.clientY,
-                                    ".drop"
-                                )
-                            ) {
-                                drag.removeClass("beginDrag");
-                                drag.addClass("readyDrop");
-                            } else {
-                                drag.removeClass("readyDrop");
-                            }
+                $(".drag").draggable({
+                    helper: function () {
+                        // Create a custom helper element
+                        var helper = $(this).clone().addClass("dragged");
+                        // Append the helper element to the ".wrapper" element
+                        $(".wrapper").append(helper);
+                        return helper;
+                    },
+                    drag: function (event, ui) {
+                        // Check for collision with the ".drop" element
+                        if (
+                            isColliding(event.clientX, event.clientY, ".drop")
+                        ) {
+                            // Add the "readyDrop" class to the helper element
+                            ui.helper
+                                .removeClass("beginDrag")
+                                .addClass("readyDrop");
+                        } else {
+                            // Remove the "readyDrop" class from the helper element
+                            ui.helper.removeClass("readyDrop");
                         }
-                    });
-                    $(window).on("mouseup", function (event) {
-                        if (isDragging) {
-                            $(window).off("mousemove");
-                            if (
-                                isColliding(
-                                    event.clientX,
-                                    event.clientY,
-                                    ".drop"
-                                )
-                            ) {
-                                drag.removeClass("readyDrop").addClass("bye");
-
-                                window.setTimeout(function () {
-                                    onDrop();
-                                    drag.remove();
-                                }, 400);
-                            } else {
-                                drag.animate(
-                                    {
-                                        top: originalPosY,
-                                        left: originalPosX,
-                                        opacity: 0,
-                                    },
-                                    400,
-                                    function () {
-                                        drag.remove();
-                                    }
-                                );
-                            }
-                            isDragging = false;
+                    },
+                    stop: function (event, ui) {
+                        // Check for collision with the ".drop" element
+                        if (
+                            isColliding(event.clientX, event.clientY, ".drop")
+                        ) {
+                            // Handle drop
+                            onDrop();
+                            // Remove the helper element
+                            ui.helper.remove();
+                        } else {
+                            // Animate the helper element back to its original position and remove it
+                            ui.helper.animate(
+                                {
+                                    top: 0,
+                                    left: 0,
+                                    opacity: 0,
+                                },
+                                400,
+                                function () {
+                                    ui.helper.remove();
+                                }
+                            );
                         }
-                    });
+                    },
                 });
             }
             $("#checkout").on("click", function (event) {

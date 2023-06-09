@@ -120,6 +120,10 @@ button {
             align-items: center;
             justify-content: center;
 
+            a {
+                cursor: move;
+            }
+
             .credit-dropdown {
                 & > p {
                     font-size: 12px;
@@ -141,5 +145,18 @@ button {
     .credit-dropdown {
         width: 200px !important;
         left: -100px !important;
+    }
+}
+@media (max-width: 991px) {
+    .top-menu {
+        margin-bottom: 10px;
+    }
+    .credit-dropdown {
+        display: block !important;
+    }
+}
+@media (max-width: 767px) {
+    .top-menu {
+        margin-bottom: 100px;
     }
 }
